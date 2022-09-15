@@ -32,6 +32,7 @@
 
 @media(max-width:687px){
 .box-headerm{
+
   position: fixed;
   top: 0;
 
@@ -44,7 +45,7 @@
   height: auto;
 
   background: #191A1F;
-  z-index: 1;
+  z-index: 10;
 }
 .div-logo{
   display: flex;

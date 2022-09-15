@@ -12,6 +12,8 @@ section {
   max-width: 1014px;
   max-height: 450px;
   /* background: violet; */
+  margin-left:2rem;
+  margin-right:2rem;
 }
 
 .div-tv {
@@ -21,6 +23,10 @@ section {
   max-width: 485px;
   max-height: 450px;
   margin-right: 2rem;
+
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle farthest-side, rgba(92, 125, 242, 0.4) 0% ,rgba(25, 26, 31, 0.5) 80%);
+
 }
 
 .div-txt-btn-banner{
@@ -101,4 +107,100 @@ section {
 
 }
 
+@media(max-width:1024px){
+
+  section{
+    justify-content:space-between;
+    max-width: 687px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+  }
+  .div-tv{
+    width: 40%;
+  }
+  .div-txt-btn-banner{
+    width: 50%;
+    justify-content:space-evenly;
+
+  }
+  .titulo-banner {
+    font-size: 25px;
+    margin-bottom: 0.5rem;
+  }
+  .preco {
+    font-size: 32px;
+  }
+  .descricao-produto {
+    font-size: 12px;
+  }
+  .btn-comprar {
+    width: 50%;
+    height: 42px;
+  }
+  
+  
+}
+
+@media(max-width:768px){
+  .titulo-banner {
+    font-size: 22px;
+  }
+  .div-txt-btn-banner {
+    margin-left: 0rem;
+}
+.div-tv {
+  margin-right: 0rem;
+}
+}
+
+@media(max-width:687px){
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    /* background: violet; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    height: 100%;
+}
+
+.div-tv{
+  width: 70%;
+  margin-top: 0rem;
+}
+
+
+.div-txt-btn-banner {
+  width: 71%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.div-preco-e-btn{
+  margin-top: 1rem;
+}
+.preco {
+  font-size: 28px;
+}
+
+}
+
+@media(max-width:485px){
+
+  .div-txt-btn-banner {
+    width: 90%;
+  }
+  .preco{
+    font-size: 26px;
+  }
+
+}
 
