@@ -1,0 +1,104 @@
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  max-width: 1014px;
+  max-height: 450px;
+  /* background: violet; */
+}
+
+.div-tv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 485px;
+  max-height: 450px;
+  margin-right: 2rem;
+}
+
+.div-txt-btn-banner{
+  margin-left:2rem ;
+}
+
+.div-txt-btn-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 492px;
+  height: 260px;
+}
+.div-preco-e-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+.titulo-banner {
+  padding: 0;
+  margin: 0;
+
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 110%;
+  color: #5c7df2;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.descricao-produto {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.preco {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 39px;
+  line-height: 110%;
+  color: #00a202;
+}
+.btn-comprar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 225px;
+  height: 49px;
+  background: #5c7df2;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+
+.btn-comprar:hover{
+  background: #87A2FF;
+
+}
+
+
