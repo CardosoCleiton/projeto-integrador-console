@@ -104,7 +104,6 @@ section {
 
 .btn-comprar:hover{
   background: #87A2FF;
-
 }
 
 @media(max-width:1024px){
@@ -204,3 +203,10 @@ section {
 
 }
 
+
+@media(max-width:425px){
+  .swiper-wrapper{
+    margin-bottom: 0rem;
+  }
+
+}

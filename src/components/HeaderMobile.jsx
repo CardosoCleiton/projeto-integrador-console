@@ -23,28 +23,32 @@ const HeaderMobile = () => {
     console.log(menu)
   }
 
-  // const [show,setShow] = useState(false);
-  // const controlNavbar = () =>{
-  //   if(window.scrollY >50){
-  //     setShow(true)
-  //   }else{
-  //     setShow(false)
-  //   }
-  // }
+  
+  const [positionn, setPositionn] = useState(window.pageYOffset)
+  const [visiblee, setVisiblee] = useState(true) 
 
-  // useEffect(()=>{
-  //   window.addEventListener('scroll',controlNavbar)
-  //   return () =>{
-  //     window.removeEventListener('scroll',controlNavbar)
-  //   }
-  // },[])
+  useEffect(()=> {
+    const handleScroll = () => {
+       let moving = window.pageYOffset
+       
+       setVisiblee(positionn > moving); //true or false
+       setPositionn(moving)
+    };
+    window.addEventListener("scroll", handleScroll);
+    return(() => {
+       window.removeEventListener("scroll", handleScroll);
+    })
+})
+
+const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
+
 
   return (
     <>
       <div className={menu ? 'mascarashow' : 'mascarahide'} onClick={handleClick}>
       </div>
 
-      <div className='box-headerm'>
+      <div className={showw}>
 
         <div className='area-logom'>
 

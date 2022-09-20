@@ -6,32 +6,37 @@
   box-sizing: border-box;
 }
 
-
-
 .header-total-show{
   display: flex;
   flex-direction: column;
-
   position: fixed;
   top: 0;
-
   width: 100%;
   height:230px;
-  background: tomato;
+  /* background: tomato; */
+  background: #191A1F;
   box-sizing: border-box;
   transition: 0.5s ease-in-out;
   opacity: 1;
+  z-index: 22;
 }
 
 
 .header-total-hiden{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height:230px;
   position: fixed;
-  /* height:-230px; */
-  top: -240px;
-  transition: 0.5s;
-  opacity: 0.2;
-}
 
+  top: -240px;
+
+  background: #191A1F;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 22;
+}
 
 .box-header{
   width: 1440px;
@@ -129,7 +134,7 @@ img:hover{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 1440px;
+  width: 100%;
   height: auto;
   margin: auto;
   background: #191A1F;
