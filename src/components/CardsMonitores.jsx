@@ -24,6 +24,10 @@ export default function CardsMonitores() {
           clickable: true,
         }}
         breakpoints={{
+          450: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
           640: {
             slidesPerView: 2,
             spaceBetween: 20,

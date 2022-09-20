@@ -36,9 +36,24 @@
 
 }
 
-@media(max-width:425px){
+@media(max-width:450px){
   .grupocard .swiper-wrapper{
     margin-bottom: -4rem;
+  }
+
+  .cards{
+    /* display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  
+    margin:0;
+    padding-top: .5rem; */
+    /* height: 570px !important; */
+    width: 180px !important;
+    background:#3B3D44!important;
+    border-radius: 0.5rem !important;
+    border: none !important;
   }
 
 }

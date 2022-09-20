@@ -71,3 +71,37 @@
   background: #87A2FF;
 }
 
+@media(max-width:450px){
+  .foto {
+    width: auto;
+    height: auto;
+    border-radius: 1rem;
+    /* background: tomato; */
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border: none;
+  }
+
+  .foto-txt-preco-btn {
+    /* background: purple !important; */
+    width: auto;
+    height: auto;
+  }
+
+  
+.descricao-titulo {
+  font-size: 14px;
+}
+
+.descricao-caracteristicas {
+  font-size: 10px;
+}
+.foto-txt-preco-btn .descricao-preco-card {
+  font-size: 31px;
+}
+
+.btn-card {
+  font-size: 14px;
+}
+
+}

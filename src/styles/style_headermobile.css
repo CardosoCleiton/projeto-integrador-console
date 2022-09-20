@@ -67,7 +67,8 @@
   z-index: 23;
 
   transition: 0.5s ease-in-out;
-  opacity: 0;
+  opacity: 0
+  ;
 }
 .div-logo{
   display: flex;
