@@ -1,19 +1,18 @@
 import React from "react";
-import CardsMonitores from "./components/CardsMonitores";
 import Header from './components/Header'
 import HeaderMobile from './components/HeaderMobile'
-import CardsProcessadoress from "./components/CardsProcessadores";
-import Sliderhome from "./components/Sliderhome";
+import Home from './components/Home'
+
+// import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 const App = () => {
   return (
+
     <>
       <HeaderMobile />
       <Header />
-      <Sliderhome/>
-      <CardsProcessadoress/>
-      <CardsMonitores/>
+      <Home />
     </>
 
   )
