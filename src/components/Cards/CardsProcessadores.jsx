@@ -8,14 +8,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Pagination } from "swiper";
 
-import '../styles/styles.slidercards.css';
-import Titulo from "./Titulos";
-import { Cards } from "./Cards";
+import './styles.slidercards.css';
+import Titulo from '../Titulo/Titulos'
+import { Cards } from "../Cards/Cards";
 
-export default function CardsMonitores() {
+export default function CardsProcessadores() {
   return (
     <>
-     <Titulo name = 'Monitores' />
+     <Titulo name = 'Processadores' />
 
       <Swiper
         slidesPerView={1}
@@ -29,7 +29,7 @@ export default function CardsMonitores() {
             spaceBetween: 10,
           },
           640: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 20,
           },
           768: {
@@ -41,7 +41,7 @@ export default function CardsMonitores() {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination]}
+        // modules={[Pagination]}
         className="grupocard"
       >
         <SwiperSlide className='cards'> <Cards/> </SwiperSlide>

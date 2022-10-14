@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 
+
 .header-total-show{
   display: flex;
   flex-direction: column;
@@ -171,6 +172,8 @@ li{
 }
 
 a {
+
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,6 +183,7 @@ a {
   cursor: pointer;
   height: 100%;
   width: 100%;
+  text-decoration: none;
 }
 
 a::before{

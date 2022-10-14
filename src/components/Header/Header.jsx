@@ -1,31 +1,33 @@
-import '../styles/style_header.css'
-import Logo from '../images/logo.png'
-import Search from '../images/search.png'
-import Carrinho from '../images/carrinho.png'
-import User from '../images/iconuser.svg'
+import './style_header.css'
+import Logo from '../../images/logo.png'
+import Search from '../../images/search.png'
+import Carrinho from '../../images/carrinho.png'
+// import User from '../images/iconuser.svg'
+import User from '../../images/iconuser.svg'
 import React, { useEffect, useState } from 'react'
-// import{Link}from 'react-router-dom'
+
+import { Link } from 'react-router-dom'
 
 
 const Header = () => {
 
   const [position, setPosition] = useState(window.pageYOffset)
-  const [visible, setVisible] = useState(true) 
+  const [visible, setVisible] = useState(true)
 
-  useEffect(()=> {
+  useEffect(() => {
     const handleScroll = () => {
-       let moving = window.pageYOffset
-       setVisible(position > moving); //true or false
-       setPosition(moving)
+      let moving = window.pageYOffset
+      setVisible(position > moving); //true or false
+      setPosition(moving)
     };
-    
-    window.addEventListener("scroll", handleScroll);
-    return(() => {
-       window.removeEventListener("scroll", handleScroll);
-    })
-})
 
-const show = visible ? 'header-total-show ' :  'header-total-hiden';
+    window.addEventListener("scroll", handleScroll);
+    return (() => {
+      window.removeEventListener("scroll", handleScroll);
+    })
+  })
+
+  const show = visible ? 'header-total-show ' : 'header-total-hiden';
 
   return (
     <>
@@ -35,12 +37,15 @@ const show = visible ? 'header-total-show ' :  'header-total-hiden';
           <div className='area-logo'>
             <div className='txt-logo'>
               <div>
-                
-                <img src={Logo} />
-                
+                <Link to='/'>
+                  <img src={Logo} />
+                </Link>
+
               </div>
               <div>
+
                 <p>CONSOLE</p>
+
               </div>
 
             </div>
@@ -75,20 +80,25 @@ const show = visible ? 'header-total-show ' :  'header-total-hiden';
           <nav>
             <ul>
               
-              <li> <a>Monitor</a> <span className='monitor'></span></li>
+                <li> <Link to='monitores' className='a'>Monitor</Link> <span className='monitor'></span></li>
               
-              
-              <li> <a>Processador</a></li>
-              
-              
-              <li> <a>Placa de vídeo</a></li>
-              
-            
-              <li> <a>Memória RAM</a></li>
-              
-              
-              <li> <a>Armazenamento</a></li>
-              
+
+              <Link to='processadores'>
+                <li>  <Link to='processadores' className='a'>Processador</Link> </li>
+              </Link>
+
+              <Link to='placas'>
+                <li>  <Link to='placas' className='a'>Placa de vídeo</Link> </li>
+              </Link>
+
+              <Link to='memoria'>
+                <li>  <Link to='memoria' className='a'>Memoria RAM</Link> </li>
+              </Link>
+
+              <Link to='armazenamento'>
+                <li>  <Link to='armazenamento' className='a'>Armazenamento</Link> </li>
+              </Link>
+
             </ul>
           </nav>
         </div>
