@@ -1,6 +1,6 @@
-import '../styles/style.bannerone.css'
+import './style.bannerone.css'
 
-import Tv from '../images/tv.png'
+import Tv from '../../images/tv.png'
 
 export default function BannerOne() {
   return (

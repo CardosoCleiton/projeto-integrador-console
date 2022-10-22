@@ -1,6 +1,7 @@
 import React from 'react'
-import '../styles/style_cards.css'
-import Image from '../images/cards_produtos/processadores/image2.png'
+import './style_cards.css'
+//import Image from '../../images/cards_produtos/processadores/image2.png'
+import Image from '../../images/cards_produtos/processadores/image2.png'
 
 
 export const Cards = (props) => {

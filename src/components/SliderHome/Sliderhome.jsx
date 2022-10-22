@@ -7,10 +7,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import "../styles/style.slider.css";
+import "./style.slider.css";
 
 // import { Children } from "react";
-import BannerOne from "./BannerOne";
+import BannerOne from "../BannerOne/BannerOne";
 
 export default function Sliderhome() {
 

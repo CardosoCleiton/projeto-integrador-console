@@ -1,5 +1,5 @@
-import '../styles/style_titulo.css'
-import Vejamais from '../images/seta_veja_mais.svg'
+import './style_titulo.css'
+import Vejamais from '../../images/seta_veja_mais.svg'
 
 export default function Titulo(props){
   return(
