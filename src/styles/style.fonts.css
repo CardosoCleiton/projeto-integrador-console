@@ -1,19 +1,4 @@
-@font-face{
-  font-family:Inter-Bold;
-  src:url(../fonts/inter/Inter-Bold.ttf)
-}
-
-@font-face{
-  font-family:Inter-ExtraLight-BETA;
-  src:url(../fonts/inter/Inter-ExtraLight-BETA.ttf)
-}
-
-
-@font-face{
-  font-family:Roboto-Regular;
-  src:url(../fonts/roboto/Roboto-Regular.ttf)
-}
-
-.geral{
-  margin-top: 300px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+body{
+  font-family: 'Roboto Condensed', sans-serif;
 }

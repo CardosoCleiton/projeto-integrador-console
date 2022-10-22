@@ -64,8 +64,6 @@
 }
 .txt-logo p{
   font-size: 1.4rem;
-  font-family:Inter-Bold;
-
 }
 
 img:hover{
@@ -124,7 +122,6 @@ img:hover{
 }
 .txt-area-login{
   padding-left: 1rem;
-  font-family:Inter-ExtraLight-BETA;
   font-size: 0.8rem;
 }
 
@@ -162,7 +159,6 @@ li{
   justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
-  font-family:Roboto-Regular;
   list-style-type: none;
   height: 100%;
   position: relative;
