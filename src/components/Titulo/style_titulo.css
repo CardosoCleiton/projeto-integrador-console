@@ -27,7 +27,6 @@
 .processadores{
   margin: 0;
   padding: 0;
-  font-family:Roboto-Regular;
   font-size: 47px;
   text-transform: uppercase;
   margin-left: 2rem;
@@ -48,7 +47,6 @@
   margin-right: 1rem;
   font-size: 1rem;
   color:#5C7DF2;
-  font-family:Inter-Bold;
 }
 
 .veja-mais:hover{
@@ -57,7 +55,6 @@
   margin-right: 1rem;
   font-size: 1rem;
   color:white;
-  font-family:Inter-Bold;
 
 }
 

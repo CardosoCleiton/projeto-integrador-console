@@ -7,6 +7,7 @@ import footerLogo from "../../images/footer-logo.png"
 import cardsIcons from "../../images/cards-icons.png"
 import email from "../../images/mail.png"
 import "./style_footer.css"
+import {Link} from "react-router-dom"
 
 const Footer = () => {
 
@@ -20,11 +21,11 @@ const Footer = () => {
                 </div>
                 <div class="footer-generic2">
                     <h3>DEPARTAMENTOS</h3>
-                    <a href="#">Monitor</a>
-                    <a href="#">Processador</a>
-                    <a href="#">Placa de vídeo</a>
-                    <a href="#">Memória Ram</a>
-                    <a href="#">Armazenamento</a>
+                    <Link to='/monitores'>Monitores</Link>
+                    <Link to='/processadores'>Processadores</Link>
+                    <Link to='/placas'>Placas</Link>
+                    <Link to='/memoria'>Memórias</Link>
+                    <Link to='/armazenamento'>Armazenamento</Link>
                     <div class="footer-wrapper">
                         <h3>FORMAS DE PAGAMENTO</h3>
                         <img src={cardsIcons}/>
