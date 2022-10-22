@@ -7,7 +7,7 @@ import Processadores from './Processadores'
 import Placa from './Placa'
 import Memoria from "./Memoria"
 import Armazenamento from "./Armazenamento"
-
+import Footer from "./components/Footer/Footer"
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Armazenamento from "./Armazenamento";
@@ -28,6 +28,7 @@ const App = () => {
         <Route path='armazenamento' element={<Armazenamento/>}/>
         
       </Routes>
+      <Footer/>
     </BrowserRouter>
 
   )
