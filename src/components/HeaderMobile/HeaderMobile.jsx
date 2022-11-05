@@ -11,6 +11,7 @@ import Hd from '../../images/hd.svg'
 import Menu from '../../images/menu.svg'
 import Fechar from '../../images/fechar.svg'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -53,7 +54,7 @@ const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
         <div className='area-logom'>
 
           <div className='div-menu'>
-            <img src={Menu} onClick={handleClick} />
+            <img src={Menu} onClick={handleClick} alt="" />
           </div>
 
 
@@ -62,12 +63,12 @@ const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
             <input className='input-search' id="search-input" type="text" />
 
             <div className='lupa-search'>
-              <img src={Search} />
+              <img src={Search} alt=""/>
             </div>
           </div>
 
           <div className='txt-logom'>
-            <img src={Logo} />
+            <img src={Logo} alt=""/>
             <p>CONSOLE</p>
           </div>
         </div>
@@ -78,36 +79,38 @@ const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
       <div className='header-total-showm'>
         <div className={menu ? 'nav-total' : 'nav-totalhiden'}>
           <nav>
-            <img src={Fechar} className='btn-fechar' onClick={handleClick} />
+            <img src={Fechar} className='btn-fechar' onClick={handleClick} alt="" />
             <div className='icons-nav'>
               <div className='div-usuario'>
-              <img src={User}  className='btn-user'/><a>Login</a>
+                <img src={User}  className='btn-user' alt=""/>
+                <Link to="/login">Login</Link>
               </div>
               <div className='div-carrinho'>
-              <img src={Carrinho} className='btn-carrinho' /><a>Minhas Compras</a>
+                <img src={Carrinho} className='btn-carrinho' alt="" />
+                <Link to="/minhas-compras">Minhas Compras</Link>
               </div>
             </div>
             <ul>
 
               <li>
-                <img src={Monitor} />
-                <a>Monitor</a>
+                <img src={Monitor} alt="" />
+                <Link to="/monitores">Monitor</Link>
               </li>
               <li>
-                <img src={Processador} />
-                <a>Processador</a>
+                <img src={Processador} alt="" />
+                <Link to="/processadores">Processador</Link>
               </li>
               <li>
-                <img src={Placavideo} />
-                <a>Placa de vídeo</a>
+                <img src={Placavideo} alt="" />
+                <Link to="/placas">Placa de vídeo</Link>
               </li>
               <li>
-                <img src={Memoriaram} />
-                <a>Memória RAM</a>
+                <img src={Memoriaram} alt="" />
+                <Link to="/memoria">Placa de vídeo</Link>
               </li>
               <li>
-                <img src={Hd} />
-                <a>Armazenamento</a>
+                <img src={Hd} alt=""/>
+                <Link to="/armazenamento">Armazenamento</Link>
               </li>
             </ul>
           </nav>

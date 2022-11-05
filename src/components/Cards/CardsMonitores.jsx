@@ -6,8 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import "./styles.css";
 // import required modules
 
-import { Pagination } from "swiper";
-
 import './styles.slidercards.css';
 // import Titulo from "./Titulos";
 import Titulo from '../Titulo/Titulos'
@@ -16,7 +14,7 @@ import { Cards } from "../Cards/Cards";
 export default function CardsMonitores() {
   return (
     <>
-     <Titulo name = 'Monitores' />
+     <Titulo name='Monitores' page="/monitores" />
 
       <Swiper
         slidesPerView={1}

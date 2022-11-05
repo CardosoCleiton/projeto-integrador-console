@@ -8,7 +8,7 @@ export const Cards = (props) => {
   return (
     <div className='foto-txt-preco-btn'>
       <div className='foto'>
-      <img src={Image}/>
+      <img src={Image} alt=""/>
       </div>
 
       <div className = 'descricao-produto-cards'>
