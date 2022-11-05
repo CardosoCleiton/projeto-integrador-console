@@ -25,7 +25,7 @@ section {
   margin-right: 2rem;
 
   background-repeat: no-repeat;
-  background-image: radial-gradient(circle farthest-side, rgba(92, 125, 242, 0.4) 0% ,rgba(25, 26, 31, 0.5) 80%);
+  /* background-image: radial-gradient(circle farthest-side, rgba(92, 125, 242, 0.4) 0% ,rgba(25, 26, 31, 0.5) 80%); */
 
 }
 
@@ -169,8 +169,7 @@ section {
 }
 
 .div-tv{
-  width: 70%;
-  margin-top: 0rem;
+  display: block;
 }
 
 
