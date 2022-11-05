@@ -7,7 +7,7 @@ export default function BannerOne() {
     <>
       <section>
         <div className='div-tv'>
-          <img src={Tv} />
+          <img src={Tv} alt=""/>
         </div>
         <div className='div-txt-btn-banner'>
           <div>

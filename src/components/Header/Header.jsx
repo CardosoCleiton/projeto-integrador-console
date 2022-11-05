@@ -38,7 +38,7 @@ const Header = () => {
             <div className='txt-logo'>
               <div>
                 <Link to='/'>
-                  <img src={Logo} />
+                  <img src={Logo} alt="" />
                 </Link>
 
               </div>
@@ -53,7 +53,7 @@ const Header = () => {
             <div className='area-input'>
               <input className='input-search' id="search-input" type="text" />
               <div className='lupa-search'>
-                <img src={Search} />
+                <img src={Search} alt=""/>
               </div>
             </div>
 
@@ -62,10 +62,10 @@ const Header = () => {
             <div className='txt-area-login-icon'>
 
               <div className='carrinho-compras'>
-                <img src={Carrinho} />
+                <img src={Carrinho} alt=""/>
               </div>
               <div className='icon-user'>
-                <img src={User} />
+                <img src={User} alt=""/>
               </div>
 
               <div className='txt-area-login'>

@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import "./styles.css";
 // import required modules
 
-import { Pagination } from "swiper";
 
 import './styles.slidercards.css';
 import Titulo from '../Titulo/Titulos'
@@ -15,7 +14,7 @@ import { Cards } from "../Cards/Cards";
 export default function CardsProcessadores() {
   return (
     <>
-     <Titulo name = 'Processadores' />
+     <Titulo name='Processadores' page="/processador"/>
 
       <Swiper
         slidesPerView={1}
