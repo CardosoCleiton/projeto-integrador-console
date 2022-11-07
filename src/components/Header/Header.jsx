@@ -51,7 +51,7 @@ const Header = () => {
             </div>
 
             <div className='area-input'>
-              <input className='input-search' id="search-input" type="text" />
+              <input className='input-search' id="search-input" type="text" placeholder="Oque você procura?" />
               <div className='lupa-search'>
                 <img src={Search} alt=""/>
               </div>

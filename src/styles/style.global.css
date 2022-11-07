@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+
+:root{
+  --title-size-1: clamp(21px, 1.2rem + 1vw, 47px);
+  --title-size-2: clamp(19px, 1.1rem + 0.9vw, 39px);
+  --title-size-3: clamp(17px, 1rem + 0.8vw, 33px);
+  --title-size-4: clamp(16px, 0.9rem + 0.6vw, 27px);
+  --title-size-5: clamp(15px, 0.8rem + 0.4vw, 23px);
+  --title-size-6: clamp(12px, 0.7rem + 0.3vw, 19px);
+  --link-size: clamp(8px, 0.5rem + 1vw, 14px);
+  --paragraph-size: clamp(12px, 0.5rem + 1vw, 16px);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #191A1F;
+}
+
+main{
+  max-width: 80vw;
+}

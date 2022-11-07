@@ -7,8 +7,10 @@ const Home = () => {
   return (
     <>
     <Sliderhome /> 
-    <CardsProcessadores/>
-    <CardsMonitores />
+    <main>
+      <CardsProcessadores/>
+      <CardsMonitores />
+    </main>
     </>
   )
 }
