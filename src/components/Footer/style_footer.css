@@ -62,8 +62,12 @@ footer a{
 }
 
 .footer-generic1 p{
-    font-size: 16px;  
+    font-size: var(--paragraph-size);
     text-align: justify; 
+}
+
+.footer-generic1 div span{
+    font-size: var(--paragraph-size);
 }
 
 .footer-generic1 span{
@@ -96,6 +100,8 @@ footer a{
     justify-content: center;
     flex-wrap: wrap;
     align-items: stretch;
+    word-wrap: break-word;
+    font-size: var(--link-size);
 }
 
 .footer-generic3 .central-atendimento a img{
@@ -111,6 +117,21 @@ footer a{
 }
 
 @media(max-width: 1024px){
+
+    .footer-generic3 .central-atendimento a{
+
+    }
+    
+    .footer-generic3 .central-atendimento a img{
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .footer-generic1 img{
+        max-width: 120px;
+    }
+
     .content{
         gap: 8px;
     }
@@ -124,7 +145,8 @@ footer a{
     }
 }
 
-@media(max-width: 750px){
+@media(max-width:687px){
+
     .content{
         flex-direction: column;
     }
@@ -139,12 +161,9 @@ footer a{
         width: 100%;
         height: 1px;
     }
-}
-
-@media(max-width:687px){
 
     .footer-generic1 img{
-        min-width: 110px;
+        min-width: 90px;
     }
 
     .footer-wrapper img{
