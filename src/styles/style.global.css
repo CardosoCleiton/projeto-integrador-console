@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: #3B3D44;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #4361CC;
+  border-radius: 5px;
+}
 
 :root{
   --title-size-1: clamp(21px, 1.5rem + 1vw, 47px);
