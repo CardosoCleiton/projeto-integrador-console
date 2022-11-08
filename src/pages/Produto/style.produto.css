@@ -1,0 +1,128 @@
+.page-produto{
+   margin-top: 230px;
+}
+
+.container-produto{
+   width: 100%;
+   background-color: #191A1F;
+   box-shadow: inset 0px 0px 136px 32px rgba(0, 0, 0, 0.4);
+   border-radius: 5px;
+   padding: 10px;
+   margin: 80px 0;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.container-produto div{
+   width: 100%;
+}
+
+.container-produto div.caracteristicas{
+   display: flex;
+   flex-direction: row;
+   height: 30vw;
+   gap: 40px;
+}
+
+div.caracteristicas .galeria{
+   width: 60%;
+   /* border: 1px solid blue; */
+   display: flex;
+   gap: 10px;
+}
+
+.galeria .menu-imagens{
+   width: 20%;
+   max-height: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   overflow-y: auto;
+   overflow-x: hidden;
+   padding-right: 5px;
+}
+
+.galeria .menu-imagens::-webkit-scrollbar{
+   width: 6px;
+   background-color: #3B3D44;
+ }
+
+
+.galeria .menu-imagens img{
+   width: 100%;
+   height: 150px;
+   border-radius: 5px;
+   background-color: #fff;
+   object-fit:contain;
+}
+
+.galeria .imagem-principal{
+   width: 80%;
+   background-color: #fff;
+   border-radius: 5px;
+}
+
+.galeria .imagem-principal img{
+   width: 100%;
+   height: 100%;
+   object-fit:contain;
+}
+
+
+
+div.caracteristicas .informacoes{
+   width: 40%;
+   border: 1px solid yellow;
+}
+
+
+
+@media(max-width:1024px){
+   .page-produto{
+      margin-top: 130px;
+   }   
+}
+
+@media(max-width:900px){
+
+   .container-produto div.caracteristicas{
+      height: auto;
+   }
+
+   div.caracteristicas .galeria{
+      width: 60%;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+   }
+
+   .galeria .menu-imagens{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      padding-bottom: 5px;
+   }
+
+   .galeria .menu-imagens img{
+      width: 100px;
+      height: 100px;
+   }
+
+   .galeria .menu-imagens::-webkit-scrollbar{
+      height: 6px;
+   }
+   
+   .galeria .imagem-principal{
+      width: 100%;
+      background-color: #fff;
+   }
+
+   .galeria .imagem-principal img{
+      height: 400px;
+   }
+
+}

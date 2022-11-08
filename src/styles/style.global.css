@@ -8,6 +8,7 @@
 ::-webkit-scrollbar-thumb{
   background-color: #4361CC;
   border-radius: 5px;
+  margin: 0 3px;
 }
 
 :root{
