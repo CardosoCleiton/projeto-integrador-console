@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import "./style.produto.css";
+import "./style.produto.css";
 import Loading from "../../components/Loading/Loading";
+import { FaMoneyBillWave } from "react-icons/fa";
+import { HiShoppingCart } from "react-icons/hi";
+
 
 const Produto = () => {
 
@@ -52,14 +55,35 @@ const Produto = () => {
                </div>
 
                <div className="informacoes">
-                  <h1>Informações</h1>
+                  <h1>{produto.nome}</h1>
+                  <span className="disponibilidade">Produto {produto.status}</span>
+
+                  <div className="preco">
+                     <FaMoneyBillWave />
+                     <span className="valor-preco">R$ {produto.preco}</span>
+                     <span className="parcelamento">Em até 12x sem juros</span>
+                  </div>
+
+                  <button className="btn-comprar">
+                     <HiShoppingCart />
+                     COMPRAR
+                  </button>
+
+                  <div className="frete">
+                     <label htmlFor="frete">Consultar frete e prazo de entrega</label>
+                     <div>
+                        <input type="text" name="frete" id="frete" placeholder="Inserir CEP" />
+                        <button>OK</button>
+                     </div>
+                  </div>
                </div>
 
             </div>
 
 
             <div className="descricao">
-               <h1>Descricao</h1>
+               <h1 className="title-style">Descrição do produto</h1>
+               <p>{produto.descricao}</p>
             </div>
 
          </div>
