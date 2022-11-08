@@ -1,16 +1,16 @@
 import React from "react";
 import Header from './components/Header/Header'
 import HeaderMobile from './components/HeaderMobile/HeaderMobile'
-import Home from './Home'
-import Monitores from './Monitores'
-import Processadores from './Processadores'
-import Placa from './Placa'
-import Memoria from "./Memoria"
-import Armazenamento from "./Armazenamento"
+import Home from './pages/Home/Home'
+import Monitores from './pages/Monitores/Monitores'
+import Processadores from './pages/Processadores/Processadores'
+import Placa from './pages/Placa/Placa'
+import Memoria from "./pages/Memoria/Memoria"
+import Armazenamento from "./pages/Armazenamento/Armazenamento"
 import Footer from "./components/Footer/Footer"
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Armazenamento from "./Armazenamento";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import NotFound from "./pages/NotFound/NotFound";
 
 
 const App = () => {
@@ -26,7 +26,8 @@ const App = () => {
         <Route path='placas' element={<Placa/>}/>
         <Route path='memoria' element={<Memoria/>}/>
         <Route path='armazenamento' element={<Armazenamento/>}/>
-        
+        <Route path='404' element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" />}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

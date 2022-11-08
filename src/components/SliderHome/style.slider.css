@@ -6,12 +6,14 @@
   z-index: 0;
 }
 
+.mySwiper{
+  background:  #191A1F;
+  box-shadow: inset 0px 0px 136px 32px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #3B3D44;
+}
+
 .swiper-slide {
   text-align: center;
-  /* font-size: 18px; */
-  background:  #191A1F;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -62,7 +64,6 @@
 
   .swiper {
     margin-top: 150px;
-    
   }
 
   .swiper-button-next:after{
@@ -95,9 +96,8 @@
   .swiper {
     margin-top:70px;
     height: auto;
-    padding-bottom: 12rem !important;
-    background: #191A1F;
-    height: 800px;
+    /* padding-bottom: 12rem !important; */
+    height: 600px;
   }
 }
 
@@ -106,8 +106,7 @@
   .swiper {
     margin-top:70px;
     height: auto;
-    padding-bottom: 7rem !important;
-    background: #191A1F;
+    /* padding-bottom: 7rem !important; */
   }
 
 
