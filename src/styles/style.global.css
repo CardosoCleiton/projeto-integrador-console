@@ -2,7 +2,7 @@
 
 
 :root{
-  --title-size-1: clamp(21px, 1.2rem + 1vw, 47px);
+  --title-size-1: clamp(21px, 1.5rem + 1vw, 47px);
   --title-size-2: clamp(19px, 1.1rem + 0.9vw, 39px);
   --title-size-3: clamp(17px, 1rem + 0.8vw, 33px);
   --title-size-4: clamp(16px, 0.9rem + 0.6vw, 27px);
