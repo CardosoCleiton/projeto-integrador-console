@@ -1,0 +1,13 @@
+.test{
+  margin-top: 500px;
+  z-index: 10;
+  border: 1px solid orange;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+}

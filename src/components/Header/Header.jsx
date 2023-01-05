@@ -65,7 +65,9 @@ const Header = () => {
                 <img src={Carrinho} alt=""/>
               </div>
               <div className='icon-user'>
+              <Link to='login' className='a'> 
                 <img src={User} alt=""/>
+                </Link> 
               </div>
 
               <div className='txt-area-login'>
