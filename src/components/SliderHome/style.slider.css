@@ -1,4 +1,4 @@
-.swiper {
+.swiper.mySwiper {
   position:relative;
   margin-top: 230px;
   width: 100%;
@@ -35,7 +35,7 @@
   object-fit: cover;
 }
 
-.swiper {
+.swiper.mySwiper {
   margin-left: auto;
   margin-right: auto;
   /* margin: 0;
@@ -62,7 +62,7 @@
 
 @media (max-width:1024px){
 
-  .swiper {
+  .swiper.mySwiper {
     margin-top: 150px;
   }
 
@@ -78,7 +78,7 @@
 }
 
 @media(max-width:768px){
-  .swiper {
+  .swiper.mySwiper {
     height: 400px;
   }
   .swiper-button-next:after{
@@ -93,7 +93,7 @@
 
 @media (max-width:687px){
 
-  .swiper {
+  .swiper.mySwiper {
     margin-top:70px;
     height: auto;
     /* padding-bottom: 12rem !important; */
@@ -103,7 +103,7 @@
 
 @media (max-width:425px){
 
-  .swiper {
+  .swiper.mySwiper {
     margin-top:70px;
     height: auto;
     /* padding-bottom: 7rem !important; */

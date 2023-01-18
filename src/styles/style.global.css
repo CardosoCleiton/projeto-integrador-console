@@ -8,6 +8,7 @@
 ::-webkit-scrollbar-thumb{
   background-color: #4361CC;
   border-radius: 5px;
+  margin: 0 3px;
 }
 
 :root{
@@ -19,6 +20,7 @@
   --title-size-6: clamp(12px, 0.7rem + 0.3vw, 19px);
   --link-size: clamp(8px, 0.5rem + 1vw, 14px);
   --paragraph-size: clamp(12px, 0.5rem + 1vw, 16px);
+
 }
 
 *{
@@ -33,5 +35,17 @@ body{
 }
 
 main{
-  max-width: 80vw;
+  width: 80vw;
+}
+
+@media(max-width:1024px){
+  main{
+    width: 85vw;
+  }
+}
+
+@media(max-width:900px){
+  main{
+    width: 90vw;
+  }
 }

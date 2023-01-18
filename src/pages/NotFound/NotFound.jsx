@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import ImageNotFound from "../../images/notfound.svg"
-import "./style_not_found.css";
+import "./style.not-found.css";
 
 const NotFound = () => {
 
