@@ -4,7 +4,7 @@ import './style_cards.css'
 import Image from '../../images/cards_produtos/processadores/image2.png'
 
 
-export const Cards = (props) => {
+export const Card = (props) => {
   return (
     <div className='foto-txt-preco-btn'>
       <div className='foto'>
