@@ -1,0 +1,290 @@
+.page-produto{
+   margin-top: 230px;
+}
+
+.container-produto{
+   width: 100%;
+   background-color: #191A1F;
+   box-shadow: inset 0px 0px 136px 32px rgba(0, 0, 0, 0.4);
+   border-radius: 5px;
+   padding: 20px;
+   height: auto;
+   margin: 80px 0;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.container-produto div{
+   width: 100%;
+}
+
+.container-produto div.caracteristicas{
+   display: flex;
+   flex-direction: row;
+   gap: 40px;
+}
+
+div.caracteristicas .galeria{
+   width: 60%;
+   display: flex;
+   height: 40vw;
+   gap: 10px;
+}
+
+.galeria .menu-imagens{
+   width: 20%;
+   max-height: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   overflow-y: auto;
+   overflow-x: hidden;
+   padding-right: 5px;
+}
+
+.galeria .menu-imagens::-webkit-scrollbar{
+   width: 6px;
+   background-color: #3B3D44;
+ }
+
+
+.galeria .menu-imagens img{
+   width: 100%;
+   height: 150px;
+   border-radius: 5px;
+   background-color: #fff;
+   object-fit:contain;
+}
+
+.galeria .imagem-principal{
+   width: 80%;
+   background-color: #fff;
+   border-radius: 5px;
+}
+
+.galeria .imagem-principal img{
+   width: 100%;
+   height: 100%;
+   object-fit:contain;
+}
+
+
+
+div.caracteristicas .informacoes{
+   width: 40%;
+   /* border: 1px solid yellow; */
+   display: flex;
+   flex-direction: column;
+   padding: 0 10px;
+}
+
+.informacoes h1{
+   font-size: var(--title-size-1);
+   color: #5C7DF2;
+   font-weight: 400;
+   line-height: 110%;
+   text-align: justify;
+}
+
+.informacoes span.disponibilidade{
+   color: #00A202;
+   text-align: justify;
+   font-size: 16px;
+   line-height: 120%;
+   text-transform: uppercase;
+}
+
+.informacoes .preco{
+   margin: 50px 0;
+}
+
+.informacoes .preco .valor-preco{
+   margin-left: 15px;
+   font-style: normal;
+   font-weight: 400;
+   font-size: var((--title-size-1));
+   line-height: 110%;
+}
+.informacoes .preco .parcelamento{
+   display: block;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 150%;
+   color: #fff;
+}
+
+.informacoes button{
+   padding: 10px 0;
+   background: #00A202;
+   border-radius: 5px;
+   border: 0;
+   font-size: 22px;
+   color: #fff;
+   cursor: pointer;
+}
+
+.btn-comprar{
+   width: 100%;
+}
+
+.informacoes .frete{
+   margin-top: 40px;
+}
+
+.informacoes .frete label{
+   display: block;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 150%;
+   color: #FFFFFF;
+}
+
+.informacoes .frete div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+}
+
+.informacoes .frete input{
+   flex: 1;
+   padding: 15px;
+   background: #3B3D44;
+   border-radius: 5px;
+   border: none;
+   outline: none;
+   color: #fff;
+}
+
+.informacoes .frete button{
+   background-color: #5C7DF2;
+   padding: 10px 20px;
+}
+
+.descricao{
+   width: 100%;
+   margin-top: 60px;
+   /* border:1px solid red; */
+}
+
+h1.title-style{
+   font-style: normal;
+   font-weight: 400;
+   font-size: var(--title-size-1);
+   line-height: 110%;
+   text-transform: uppercase;
+   color: #fff;
+   padding-left: 20px;
+   border-left: 4px solid #5C7DF2;
+}
+
+.descricao p{
+   color: #fff;
+   font-size: var(--paragraph-size);
+   font-style: normal;
+   font-weight: 400;
+   line-height: 150%;
+   margin-top: 40px;
+}
+
+@media(max-width:1024px){
+   .page-produto{
+      margin-top: 130px;
+   }   
+}
+
+@media(max-width:900px){
+
+   .container-produto div.caracteristicas{
+      height: auto;
+      gap: 10px;
+   }
+
+   div.caracteristicas .galeria{
+      width: 60%;
+      display: flex;
+      flex-direction: column-reverse;
+      height: auto;
+   }
+
+   .galeria .menu-imagens{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      overflow-y: hidden;
+      overflow-x: auto;
+      padding-bottom: 5px;
+   }
+
+   div.caracteristicas .informacoes{
+      width: 40%;
+   }
+
+   .galeria .menu-imagens img{
+      width: 100px;
+      height: 100px;
+   }
+
+   .galeria .menu-imagens::-webkit-scrollbar{
+      height: 6px;
+   }
+   
+   .galeria .imagem-principal{
+      width: 100%;
+      background-color: #fff;
+   }
+
+   .galeria .imagem-principal img{
+      height: 400px;
+   }
+
+   .informacoes .frete div{
+      gap: 5px;
+      flex-wrap: wrap;
+   }
+
+   .informacoes .frete input{
+      padding: 10px;
+      width: auto;
+   }
+   
+   .informacoes .frete button{
+      background-color: #5C7DF2;
+      padding: 5px 10px;
+      font-size: 20px;
+      width: 100%;
+   }
+
+   .informacoes button{
+      font-size: 16px;
+   }
+
+}
+
+
+@media(max-width:687px){
+
+   .page-produto{
+      margin-top: 60px;
+   }
+
+   .container-produto{
+      margin: 40px 0;
+   }
+
+   .container-produto div.caracteristicas{
+      flex-direction: column;
+   }
+   
+   div.caracteristicas .galeria{
+      width: 100%;
+   }
+
+   div.caracteristicas .informacoes{
+      width: 100%;
+   }
+}

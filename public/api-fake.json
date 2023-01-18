@@ -1,0 +1,23 @@
+{
+   "id": "123456",
+   "nome": "Processador Amd Ryzen 7 5800x, 5° Geração.",
+   "status": "Disponível",
+   "preco": 1917.01,
+   "descricao": "Tudo sobre o processador AMD Ryzen 7 5800X\nO único com tecnologia AMD 3D V-Cache™, o processador AMD Ryzen 7 5800X permite obter máximo desempenho nos jogos de alta velocidade. Conhecido também como o melhor processador de desktop do mundo, este modelo possui 8 núcleos otimizados para plataformas de jogos FPS e também funciona de maneira excelente para criadores que necessitam de velocidade e processamento dedicado.\nAMD 'Zen 3' Core Architecture\nOs núcleos mais rápidos do mundo para jogadores de PC, a arquitetura Zen 3 de alto desempenho é um redesenho básico da lendária família Zen. Equipado com aprimoramentos de design de ponta a ponta, o Zen 3 traz o foco no desempenho de núcleo único, eficiência de energia e latências reduzidas.\nTecnologia AMD StoreMI\nUm jeito rápido e fácil de expandir e acelerar o armazenamento nos PCs com um processador AMD Ryzen™, a tecnologia AMD StoreMI é uma ferramenta bastante eficaz para fãs de PCs que desejam incrementar os tempos de carregamento e boot, o gerenciamento de arquivos ou a capacidade de resposta.\nAMD Ryzen™ Master\nUm utilitário de overclocking simples e potente para os processadores AMD Ryzen™, o AMD Ryzen™ Master oferece suporte a diversos produtos e recursos de CPU, com uma visão básica que fornece acesso aos recursos e telemetria mais essenciais. Você também pode alternar para a visão avançada e visualizar recursos de overclock mais adequados para a sua necessidade.\nNão possui video integrado",
+   "imagens": [
+      "/images/imagem-processador.png",
+      "/images/processador-3.jpeg",
+      "/images/processador-2.jpg",
+      "/images/processador-4.jpg",
+      "/images/processador-5.jpg"
+   ],
+   "itensRelacionados": [
+      {
+         "id": "123456",
+         "nome": "Processador Amd Ryzen 7 5800x, 5° Geração.",
+         "descricao": "8 Core 16 Threads, Cache 36mb, 3.8ghz (4.7ghz Max. Turbo) Am4 - 100-100000063WOF",
+         "preco": 1450.90,
+         "imagem": "/images/imagem-processador.png"
+      }
+   ]
+}
