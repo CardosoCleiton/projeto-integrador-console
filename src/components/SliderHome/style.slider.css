@@ -78,9 +78,6 @@
 }
 
 @media(max-width:768px){
-  .swiper.mySwiper {
-    height: 400px;
-  }
   .swiper-button-next:after{
     display: none;
   }
@@ -102,12 +99,15 @@
 }
 
 @media (max-width:425px){
-
   .swiper.mySwiper {
     margin-top:70px;
-    height: auto;
     /* padding-bottom: 7rem !important; */
   }
 
+}
 
+@media (max-width:400px){
+  .swiper.mySwiper {
+    height: auto;
+  }
 }

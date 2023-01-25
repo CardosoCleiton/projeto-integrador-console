@@ -14,6 +14,7 @@ import Produto from "./pages/Produto/Produto";
 import NotFound from "./pages/NotFound/NotFound";
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Login from "./pages/Login/Login";
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path='memoria' element={<Memoria/>}/>
         <Route path='armazenamento' element={<Armazenamento/>}/>
         <Route path='produto' element={<Produto />} />
+        <Route path='/login' element={<Login />} />
         <Route path='404' element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" />}/>
       </Routes>
