@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 
 const types = {
@@ -20,8 +20,8 @@ const types = {
 
 const useForm = (type) => {
 
-  const [value, setValue] = React.useState('');
-  const [error, setError] = React.useState(null);
+  const [value, setValue] = useState('');
+  const [error, setError] = useState(null);
 
   function validate(value) {
     if (value.length === 0) {
