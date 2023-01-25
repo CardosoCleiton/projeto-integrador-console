@@ -1,0 +1,40 @@
+.txt-area-login a {
+   color: #fff;
+   text-decoration: none;
+}
+
+.txt-area-login ul li {
+   cursor: pointer;
+   border: none;
+   background: none;
+   color: #fff;
+   font-size: 15px;
+   list-style: none;
+}
+
+.txt-area-login ul li:hover ul{
+   display: block;
+}
+
+.txt-area-login ul li ul{
+   display: none;
+   background-color: rgba(67, 97, 204, .8);
+   border-radius: 5px;
+   text-align: center;
+   position: absolute;
+}
+
+.txt-area-login ul li ul li{
+   list-style: none;
+}
+
+.txt-area-login ul li ul a{
+   text-decoration: none;
+   display: inline-block;
+   padding: 5px 15px;
+   font-size: 15px;
+}
+
+.txt-area-login ul li ul a:hover{
+   color: #191A1F;
+}

@@ -1,4 +1,4 @@
-import LoadingImg from "../../images/loading.svg";
+import LoadingImg from "../../../images/loading.svg";
 import "./style.loading.css";
 
 const Loading = () => {

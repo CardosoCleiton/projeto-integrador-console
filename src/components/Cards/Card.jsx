@@ -16,7 +16,7 @@ export const Card = (props) => {
         <p className='descricao-caracteristicas'>8 Core 16 Threads, Cache 36mb, 3.8ghz (4.7ghz Max. Turbo) Am4 - 100-100000063WOF</p><p className='descricao-preco-card'>R$ 1.917,01</p>
       </div>
   
-      <buttom className='btn-card'>Adcionar ao carrinho</buttom>
+      <button className='btn-card'>Adcionar ao carrinho</button>
 
     </div>
   )

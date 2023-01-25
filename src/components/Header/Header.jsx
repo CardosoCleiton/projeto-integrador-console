@@ -1,18 +1,23 @@
 import './style_header.css'
+import './style.drop-menu.css'
 import Logo from '../../images/logo.png'
 import Search from '../../images/search.png'
 import Carrinho from '../../images/carrinho.png'
 // import User from '../images/iconuser.svg'
 import User from '../../images/iconuser.svg'
 import React, { useEffect, useState } from 'react'
-
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react';
+import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 
 const Header = () => {
 
   const [position, setPosition] = useState(window.pageYOffset)
   const [visible, setVisible] = useState(true)
+
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +31,13 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     })
   })
+  
+  const handleLogout = async (event) => {
+    event.preventDefault();
+    await auth.signOut();
+    navigate("/");
+    window.location.reload();
+  }
 
   const show = visible ? 'header-total-show ' : 'header-total-hiden';
 
@@ -67,11 +79,30 @@ const Header = () => {
               <div className='icon-user'>
               <Link to='login' className='a'> 
                 <img src={User} alt=""/>
-                </Link> 
+              </Link> 
               </div>
 
               <div className='txt-area-login'>
-                <p>Faça seu <strong>Login</strong> ou <br /> crie seu <strong>Cadastro</strong></p></div>
+                
+                {!auth.user && <p>Faça seu <strong><Link to="/login">Login</Link></strong> ou <br /> crie seu <strong>Cadastro</strong></p>}
+                
+                {auth.user &&
+                  <>
+                    <p>Bem vindo <strong>{auth.user.name.split(" ")[0]}</strong></p>
+                    <ul>
+                      <li>Minha Conta &#9660;
+                        <ul>
+                          <li><Link to="/pedidos">Pedidos</Link></li>
+                          <li><Link to="/cadastro">Cadastro</Link></li>
+                          <li><Link to="/enderecos">Endereços</Link></li>
+                          <li><Link to="#" onClick={handleLogout}>Sair da conta</Link></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </>
+                } 
+              </div>
+
             </div>
 
           </div>
@@ -81,26 +112,11 @@ const Header = () => {
         <div className='nav-total'>
           <nav>
             <ul>
-              
-                <li> <Link to='monitores' className='a'>Monitor</Link> <span className='monitor'></span></li>
-              
-
-              <Link to='processadores'>
-                <li>  <Link to='processadores' className='a'>Processador</Link> </li>
-              </Link>
-
-              <Link to='placas'>
-                <li>  <Link to='placas' className='a'>Placa de vídeo</Link> </li>
-              </Link>
-
-              <Link to='memoria'>
-                <li>  <Link to='memoria' className='a'>Memoria RAM</Link> </li>
-              </Link>
-
-              <Link to='armazenamento'>
-                <li>  <Link to='armazenamento' className='a'>Armazenamento</Link> </li>
-              </Link>
-
+              <li><Link to='monitores' className='a'>Monitor</Link> <span className='monitor'></span></li>
+              <li><Link to='processadores' className='a'>Processador</Link></li>
+              <li><Link to='placas' className='a'>Placa de vídeo</Link></li>
+              <li><Link to='memoria' className='a'>Memoria RAM</Link></li>
+              <li> <Link to='armazenamento' className='a'>Armazenamento</Link></li>
             </ul>
           </nav>
         </div>

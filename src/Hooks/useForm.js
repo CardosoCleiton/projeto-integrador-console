@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 const types = {
   cep: {
-    regex: /^([\d]{2})\.?([\d]{3})\-?([\d]{3})/,
+    regex: /^[0-9]{5}-[0-9]{3}$/,
     message: 'Cep inválido'
   },
   email: {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./style.produto.css";
-import Loading from "../../components/Loading/Loading";
+import Loading from "../../components/ui/Loading/Loading";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
 

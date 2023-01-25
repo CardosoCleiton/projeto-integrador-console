@@ -1,10 +1,10 @@
-import React from 'react'
-import { Api } from '../../api/Api'
+import LoginArea from "../../components/LoginArea/LoginArea"
+import "./style.login.css"
 
 export const Login = () => {
   return (
-    <div>
-      <Api/>
+    <div className="login-page">
+      <LoginArea />
     </div>
   )
 }

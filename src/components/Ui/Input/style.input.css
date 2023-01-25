@@ -1,0 +1,13 @@
+.input-form{
+   border: none;
+   background-color: #3B3D44;
+   border-radius: 5px;
+   padding: 12px 15px;
+   color: #fff;
+   border: 1px solid transparent;
+}
+
+.input-form:focus, .input-form:active{
+   outline: 0;
+   border: 1px solid #6B6B6B;
+}

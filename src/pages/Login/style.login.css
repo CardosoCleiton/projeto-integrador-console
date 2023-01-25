@@ -1,0 +1,21 @@
+.login-page{
+   margin-top: 270px;
+   margin-bottom: 40px;
+   max-width: 80vw;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+@media(max-width: 688px){
+   .login-page{
+      margin-top: 150px;
+   }
+}
+
+@media(max-width: 685px){
+   .login-page{
+      margin-top: 80px;
+   }
+}

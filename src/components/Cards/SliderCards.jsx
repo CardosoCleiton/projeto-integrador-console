@@ -35,8 +35,8 @@ const SliderCards = ({category, link, children}) => {
         className="grupocard"
       >
 
-        {children.map((card => 
-          <SwiperSlide className='cards'>{card}</SwiperSlide>
+        {children.map(((card, index) => 
+          <SwiperSlide className='cards' key={index}>{card}</SwiperSlide>
         ))}
 
       </Swiper>
