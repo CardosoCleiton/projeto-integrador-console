@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const LoginArea = () => {
 
@@ -20,11 +21,18 @@ const LoginArea = () => {
    const handleLogin = async (event) => {
       event.preventDefault();
       if(email && password){
-         const isLogged = await auth.signIn(email, password);
-         if(isLogged){
-            navigate("/");
-         }else{
-            alert("DEU ERRADO");
+         try{
+            const isLogged = await auth.signIn(email, password);
+            if(isLogged.name){
+               navigate("/");
+            }
+
+         }catch(error){
+            console.log(error);
+            toast.error(error.message, {
+               position: "top-right",
+               theme: "dark"
+            });
          }
       }
    }

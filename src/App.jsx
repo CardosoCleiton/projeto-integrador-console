@@ -12,15 +12,16 @@ import Memoria from "./pages/Memoria/Memoria"
 import Armazenamento from "./pages/Armazenamento/Armazenamento"
 import Produto from "./pages/Produto/Produto";
 import NotFound from "./pages/NotFound/NotFound";
-
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from "./pages/Login/Login";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
   return (
-
     <BrowserRouter>
+    <ToastContainer autoClose={3000}/>
       <HeaderMobile />
       <Header />
       <Routes>

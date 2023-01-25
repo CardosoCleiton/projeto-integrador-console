@@ -6,7 +6,7 @@ import Carrinho from '../../images/carrinho.png'
 // import User from '../images/iconuser.svg'
 import User from '../../images/iconuser.svg'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 
@@ -17,8 +17,7 @@ const Header = () => {
   const [visible, setVisible] = useState(true)
 
   const auth = useContext(AuthContext);
-  const navigate = useNavigate();
-
+  
   useEffect(() => {
     const handleScroll = () => {
       let moving = window.pageYOffset
@@ -35,7 +34,6 @@ const Header = () => {
   const handleLogout = async (event) => {
     event.preventDefault();
     await auth.signOut();
-    navigate("/");
     window.location.reload();
   }
 

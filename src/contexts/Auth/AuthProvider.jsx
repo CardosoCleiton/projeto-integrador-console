@@ -6,6 +6,7 @@ import { useEffect } from "react";
 export const AuthProvider = ({children}) => {
 
    const [user, setUser] = useState(null);
+
    const api = authenticateApi();
 
    useEffect(() => {
@@ -22,14 +23,19 @@ export const AuthProvider = ({children}) => {
    }, [api]);
 
    const signIn = async (email, password) => {
-      const data = await api.signIn(email, password);
+      try{
+         const data = await api.signIn(email, password);
+         
+         if(data.user && data.token){
+            setUser(data.user);
+            setToken(data.token)
+            return data.user;
+         }
 
-      if(data.user && data.token){
-         setUser(data.user);
-         setToken(data.token)
-         return true;
+         return false;
+      }catch(error){
+         throw new Error(error.message)
       }
-      return false;
    }
 
    const signOut = async () => {
