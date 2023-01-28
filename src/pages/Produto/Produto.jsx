@@ -1,9 +1,14 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import "./style.produto.css";
 import Loading from "../../components/Ui/Loading/Loading";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
+import { useParams } from "react-router-dom";
+import { findProductById } from "../../api/enpoints/products/find-product-by-id";
+import { listProductByCategory } from "../../api/enpoints/products/list-product-by-category";
+import { apiConfig } from "../../config/variables"
+import SliderCards from "../../components/Cards/SliderCards";
+import { Card } from "../../components/Cards/Card";
 
 
 const Produto = () => {
@@ -11,16 +16,22 @@ const Produto = () => {
    const [produto, setProduto] = useState({});
    const [loading, setLoading] = useState(true);
    const [selectedImg, setSelectedImg] = useState("");
+   const [relatedItems, setRelatedItems] = useState({});
+
+   const { id } = useParams();
 
    useEffect(() => {
-     async function loadingApi(){
-      const { data } = await axios.get("/api-fake.json")
-      setProduto(data);
-      setSelectedImg(data.imagens[0])
-      setLoading(false)
-     }
+      async function loadingApi(){
+         const data = await findProductById(id);
+         const relationalItems = await listProductByCategory(data.category.slug, 8);
+         console.log(relatedItems.rows);
+         setRelatedItems(relationalItems.rows);
+         setProduto(data);
+         setSelectedImg(`${apiConfig.imagesBaseUrl}/${data.image_products[0].name}`)
+         setLoading(false)
+      }
      loadingApi();
-   }, [setProduto, setLoading, setSelectedImg]);
+   }, [setProduto, setLoading, setSelectedImg, id]); // eslint-disable-line
 
 
    if(loading){
@@ -37,14 +48,15 @@ const Produto = () => {
                
                <div className="galeria">
                   <div className="menu-imagens">
-                     {produto.imagens.map((img, index) => {
+                     {produto.image_products.map((img, index) => {
+                        let imgUrl = `${apiConfig.imagesBaseUrl}/${img.name}`;
                         return(
                            <img
-                              src={img}
+                              src={imgUrl}
                               alt=""
                               key={index}
-                              onClick={() => setSelectedImg(img)}
-                              style={{border : img === selectedImg ? "3px solid #5C7DF2": ""}}
+                              onClick={() => setSelectedImg(imgUrl)}
+                              style={{border : imgUrl === selectedImg ? "3px solid #5C7DF2": ""}}
                            />
                         )
                      })}
@@ -55,13 +67,13 @@ const Produto = () => {
                </div>
 
                <div className="informacoes">
-                  <h1>{produto.nome}</h1>
-                  <span className="disponibilidade">Produto {produto.status}</span>
+                  <h1>{produto.name}</h1>
+                  <span className="disponibilidade">Produto {produto.stock ? "Disponível" : "Indisponível"}</span>
 
                   <div className="preco">
                      <FaMoneyBillWave />
-                     <span className="valor-preco">R$ {produto.preco}</span>
-                     <span className="parcelamento">Em até 12x sem juros</span>
+                     <span className="valor-preco">{produto.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
+                     <span className="parcelamento">Em até 12x com juros</span>
                   </div>
 
                   <button className="btn-comprar">
@@ -83,10 +95,25 @@ const Produto = () => {
 
             <div className="descricao">
                <h1 className="title-style">Descrição do produto</h1>
-               <p>{produto.descricao}</p>
+               <p>{produto.description}</p>
             </div>
 
          </div>
+
+         <SliderCards category="Itens relacionados" link={produto.category.slug}>
+            {relatedItems.map((relacional) => {
+               return (
+                  <Card
+                  image={relacional.image_products[0].name}
+                  name={relacional.name}
+                  description={relacional.description}
+                  price={relacional.price}
+                  id={relacional.id}
+                  key={relacional.id}
+                  />
+               )
+            })}
+         </SliderCards>
       </main>
    )
 }

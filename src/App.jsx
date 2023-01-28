@@ -31,8 +31,8 @@ const App = () => {
         <Route path='placas' element={<Placa/>}/>
         <Route path='memoria' element={<Memoria/>}/>
         <Route path='armazenamento' element={<Armazenamento/>}/>
-        <Route path='produto' element={<Produto />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/produto/:id' element={<Produto />} />
+        <Route path='login' element={<Login />} />
         <Route path='404' element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" />}/>
       </Routes>

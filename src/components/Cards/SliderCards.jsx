@@ -3,6 +3,7 @@ import './styles.slidercards.css';
 import Titulo from '../Titulo/Titulos'
 
 const SliderCards = ({category, link, children}) => {
+
   return (
     <>
      <Titulo name={category} page={link}/>

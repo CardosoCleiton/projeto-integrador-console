@@ -20,7 +20,7 @@ export const AuthProvider = ({children}) => {
          }
       }
       validateToken();
-   }, [api]);
+   }, []); // eslint-disable-line
 
    const signIn = async (email, password) => {
       try{

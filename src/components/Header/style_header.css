@@ -147,10 +147,10 @@ img:hover{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  width: 680px;
+  /* width: 680px; */
   height: 70px;
   color: white;
+  gap: 50px;
 }
 
 .nav-total li{
@@ -168,7 +168,6 @@ img:hover{
 }
 
 .nav-total a {
-
   color: white;
   display: flex;
   align-items: center;
@@ -250,7 +249,6 @@ nav-total a:hover{
     display: flex;
     flex-direction: row;
     align-items: center;
-    
     width: 100%;
     margin: auto;
   }
@@ -277,16 +275,12 @@ nav-total a:hover{
   }
 
   .carrinho-compras{
-    margin-right: 2rem;
+    margin:0 1rem;
   }
 
   .txt-logo{
     margin-left: 2rem;
     align-items: flex-start;
-  }
-
-  .txt-area-login{
-    display: none;
   }
 
   .area-input{
@@ -301,18 +295,10 @@ nav-total a:hover{
   }
   .area-logo{
     height: 100px;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 33px;
     height: 100px;
   }
 
-  .nav-total{
-    height: 30%;
-  }
   a::before {
     bottom: 22px;
   }
@@ -325,9 +311,7 @@ nav-total a:hover{
 @media(max-width:687px){
   .header-total-show{
     display: none;
-
   }
-
 }
 
 

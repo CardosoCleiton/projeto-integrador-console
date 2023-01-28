@@ -4,13 +4,15 @@
   border-radius: 1rem;
   border: none;
 }
-.foto-txt-preco-btn {
-  padding: 0.5rem;
-}
 
 .foto-txt-preco-btn{
+  padding: 0.5rem;
   background:#3B3D44;
   border-radius: 5px;
+}
+
+.foto-txt-preco-btn a {
+  text-decoration: none;
 }
 
 .descricao-produto-cards {
@@ -54,4 +56,20 @@
 
 .btn-card:hover{
   background: #87A2FF;
+}
+
+.descricao-titulo {
+  overflow: hidden; /* remove o estouro do elemento */
+  text-overflow: ellipsis; /* adiciona “...” no final */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* quantidade de linhas */
+  -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
+  min-height: 55px;
+}
+.descricao-caracteristicas{
+  overflow: hidden; /* remove o estouro do elemento */
+  text-overflow: ellipsis; /* adiciona “...” no final */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* quantidade de linhas */
+  -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
 }

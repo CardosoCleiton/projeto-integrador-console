@@ -57,8 +57,6 @@ const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
             <img src={Menu} onClick={handleClick} alt="" />
           </div>
 
-
-
           <div className='area-input'>
             <input className='input-search' id="search-input" type="text" />
 
@@ -74,12 +72,9 @@ const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
         </div>
       </div>
 
-
-
       <div className='header-total-showm'>
         <div className={menu ? 'nav-total' : 'nav-totalhiden'}>
           <nav>
-            <img src={Fechar} className='btn-fechar' onClick={handleClick} alt="" />
             <div className='icons-nav'>
               <div className='div-usuario'>
                 <img src={User}  className='btn-user' alt=""/>
@@ -89,9 +84,9 @@ const showw = visiblee ? 'box-headermshow ' :  'box-headermhiden';
                 <img src={Carrinho} className='btn-carrinho' alt="" />
                 <Link to="/minhas-compras">Minhas Compras</Link>
               </div>
+            <img src={Fechar} className='btn-fechar' onClick={handleClick} alt="" />
             </div>
             <ul>
-
               <li>
                 <img src={Monitor} alt="" />
                 <Link to="/monitores">Monitor</Link>
