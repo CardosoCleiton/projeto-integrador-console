@@ -64,7 +64,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2; /* quantidade de linhas */
   -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
-  min-height: 55px;
+  min-height: 52px;
 }
 .descricao-caracteristicas{
   overflow: hidden; /* remove o estouro do elemento */
