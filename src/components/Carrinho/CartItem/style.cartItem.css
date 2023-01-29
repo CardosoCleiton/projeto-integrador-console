@@ -1,0 +1,160 @@
+.card-item-content{
+   background-color: rgba(59, 61, 68, 0.6);
+   border-radius: 5px;
+   padding: 10px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.card-item-content img{
+   max-height: 160px;
+   max-width: 160px;
+   object-fit:contain;
+   border-radius: 5px;
+   margin-right: 10px;
+}
+
+.card-item-infos{
+   flex-grow: 2;
+}
+
+.card-item-infos h4{
+   color: #fff;
+   font-style: normal;
+   font-weight: 400;
+   font-size: var(--title-size-5);
+   line-height: 120%;
+   text-align: justify;
+   margin: 0 20px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid rgba(107, 107, 107, 1);
+   overflow: hidden; /* remove o estouro do elemento */
+  text-overflow: ellipsis; /* adiciona “...” no final */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* quantidade de linhas */
+  -webkit-box-orient: vertical; /* conteúdo será apresentado verticalmente */
+}
+
+.card-item-infos div{
+   display: inline-block;
+   margin-top: 10px;
+}
+
+.item-quantidade{
+   margin-right: 80px;
+}
+
+.card-item-infos div p{
+   font-weight: 400;
+   font-size: var(--paragraph-size);
+   line-height: 120%;
+   color: #fff;
+   margin-bottom: 15px;
+}
+
+.item-quantidade button{
+   background-color: transparent;
+   cursor: pointer;
+   border-radius: 50%;
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 100%;
+   color: #5C7DF2;
+   border: 2px solid #5C7DF2;
+   width: 30px;
+   height: 30px;
+}
+
+.item-quantidade button ~ span{
+   font-weight: 400;
+   font-size: var(--title-size-2);
+   line-height: 110%;
+   color: #fff;
+   padding: 10px;
+}
+
+.item-preco h1{
+   font-size: var(--title-size-2);
+   color: #00A202;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 110%;
+}
+
+.excluir-item{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #87A2FF;
+   font-size: 20px;
+}
+
+.excluir-item svg{
+   cursor: pointer;
+}
+
+@media(max-width: 832px){
+   .item-quantidade{
+      margin-right: 10px;
+   }
+}
+
+@media(max-width: 702px){
+   .item-quantidade button{
+      font-size: 18px;
+      width: 22px;
+      height: 22px;
+   }
+}
+
+@media(max-width: 593px){
+   .card-item-infos h4{
+      margin: 0 10px;
+   }
+}
+
+@media(max-width: 593px){
+
+   .card-item-content img{
+      max-height: 120px;
+      max-width: 120px;
+   }
+
+   .item-quantidade button ~ span{
+      padding: 5px;
+   }
+}
+
+@media(max-width: 434px){
+
+   .card-item-content img{
+      min-width: 100px;
+   }
+}
+
+@media(max-width: 382px){
+
+   .card-item-content{
+      min-height: auto;
+   }
+
+   .item-quantidade button{
+      font-size: 16px;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(92, 125, 242, 1);
+   }
+
+   .card-item-content img{
+      min-width: 70px;
+   }
+
+   .card-item-content{
+      max-height: auto;
+   }
+
+   .excluir-item{
+      font-size: 15px;
+   }
+}

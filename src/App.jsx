@@ -16,6 +16,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from "./pages/Login/Login";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Carrinho from "./pages/Carrinho/Carrinho";
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
         <Route path='memoria' element={<Memoria/>}/>
         <Route path='armazenamento' element={<Armazenamento/>}/>
         <Route path='/produto/:id' element={<Produto />} />
+        <Route path='/carrinho' element={<Carrinho />} />
         <Route path='login' element={<Login />} />
         <Route path='404' element={<NotFound />} />
         <Route path="*" element={<Navigate to="/404" />}/>

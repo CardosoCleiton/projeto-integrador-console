@@ -1,0 +1,123 @@
+.area-items-price{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.area-products {
+   flex-grow: 1.5;
+   margin-right: 20px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.area-price {
+   flex-grow: 1;
+}
+
+.area-price .card-price{
+   background-color: rgba(59, 61, 68, 0.6);
+   border-radius: 5px;
+}
+
+.sub-total{
+   border-bottom: 1px solid #6B6B6B;
+   padding: 10px;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+}
+
+.sub-total div:first-child{
+   margin-bottom: 10px;
+}
+
+.sub-total div{
+   display: flex;
+   justify-content: space-between;
+   font-size: var(--paragraph-size);
+}
+
+.area-price-total{
+   padding: 15px 10px;
+   display: flex;
+   justify-content: space-between;
+   color: #fff;
+   font-size: var(--title-size-2);
+   border-bottom: 1px solid #6B6B6B;
+}
+
+.area-price-total span{
+   color: #00A202;
+}
+
+.area-parcelamento{
+   padding: 7px 10px;
+   display: flex;
+   justify-content: space-between;
+   color: #fff;
+   font-size: 30px;
+   color: #00A202;
+}
+
+.area-parcelamento span{
+   font-size: var(--paragraph-size);
+   color: #fff;
+}
+
+.area-price button {
+   width: 100%;
+   border: 0;
+   padding: 15px 0;
+   border-radius: 0 0 5px 5px;
+   cursor: pointer;
+   background-color: #00A202;
+   color: #fff;
+   font-size: var(--title-size-4);
+}
+
+.area-frete{
+   margin-top: 50px;
+   color: #fff;
+}
+
+.area-frete p{
+   margin-bottom: 10px;
+}
+
+.area-frete input {
+   padding: 15px 10px;
+   font-size: var(--paragraph-size);
+}
+
+.area-frete button {
+   margin-left: 10px;
+   padding: 15px 10px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   color: #fff;
+   background-color: rgba(92, 125, 242, 1);
+   transition: all .2s;
+   font-size: var(--paragraph-size);
+}
+
+.area-frete button:hover{
+   background-color: #4361CC;
+}
+
+@media(max-width: 707px){
+   .area-items-price{
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   .area-products {
+      flex-grow: 1;
+   }
+
+   .area-products {
+      margin-right: 0;
+   }
+}
