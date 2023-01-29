@@ -10,7 +10,7 @@ export const Card = ({name, description, price, image, id}) => {
 
   return (
     <div className='foto-txt-preco-btn'>
-      <Link to={`produto/${id}`}>
+      <Link to={`/produto/${id}`}>
         <div className='foto'>
         <img src={`${apiConfig.imagesBaseUrl}/${image}`} alt={name}/>
         </div>

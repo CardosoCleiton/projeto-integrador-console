@@ -24,7 +24,7 @@ const Produto = () => {
       async function loadingApi(){
          const data = await findProductById(id);
          const relationalItems = await listProductByCategory(data.category.slug, 8);
-         console.log(relatedItems.rows);
+         window.scrollTo(0, 0);
          setRelatedItems(relationalItems.rows);
          setProduto(data);
          setSelectedImg(`${apiConfig.imagesBaseUrl}/${data.image_products[0].name}`)

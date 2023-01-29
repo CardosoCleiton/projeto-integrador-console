@@ -1,8 +1,8 @@
 .swiper.mySwiper {
   position:relative;
-  margin-top: 230px;
+  padding-top: 230px;
   width: 100%;
-  height: 540px;
+  height: 770px;
   z-index: 0;
 }
 
@@ -63,7 +63,7 @@
 @media (max-width:1024px){
 
   .swiper.mySwiper {
-    margin-top: 150px;
+    padding-top: 150px;
   }
 
   .swiper-button-next:after{
@@ -91,7 +91,7 @@
 @media (max-width:687px){
 
   .swiper.mySwiper {
-    margin-top:70px;
+    padding-top:70px;
     height: auto;
     /* padding-bottom: 12rem !important; */
     height: 600px;
