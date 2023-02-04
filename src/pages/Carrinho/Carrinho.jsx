@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import StepCarInfo from "../../components/Carrinho/StepCartInfo/StepCartInfo";
+import LoginArea from "../../components/LoginArea/LoginArea";
 import "./style.carrinho.css";
 
 const Carrinho = () => {
@@ -19,6 +20,7 @@ const Carrinho = () => {
 
          <div className="steps">
             {screen === "cartInfo" && <StepCarInfo />}
+            {screen === "login" && <LoginArea />}
          </div>
 
       </main>
