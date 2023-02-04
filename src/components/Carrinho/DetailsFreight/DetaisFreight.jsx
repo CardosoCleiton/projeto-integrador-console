@@ -5,7 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 const DetailsFreight = (props) => {
    return(
       <>
-         <input type="radio" {...props} />
+         <input type="radio" {...props} className="radio-freight"/>
          <label htmlFor={props.id} className="box-details-freight">
             <div className="box-details-freight-icone"><FaCheckCircle /></div>
             <div className="box-details-freight-prazo">
@@ -13,7 +13,7 @@ const DetailsFreight = (props) => {
                <span>Prazo de entrega: até 13 dias úteis</span>
             </div>
             <div className="box-details-freight-price">R$ 28,90</div>
-         </label>
+         </label> 
       </>
    )
 }

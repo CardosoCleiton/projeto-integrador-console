@@ -1,0 +1,15 @@
+input.radio-address{
+   width: 15px;
+   height:15px;
+   display: inline;
+   margin-right: 10px;
+}
+
+.opcoes-frete label{
+   margin: 10px 0;
+}
+
+.btns-next-previus{
+   display: flex;
+   justify-content: space-between;
+}

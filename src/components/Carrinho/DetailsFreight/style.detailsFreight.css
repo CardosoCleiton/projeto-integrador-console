@@ -38,14 +38,14 @@ label.box-details-freight{
    font-size: var(--title-size-4);
 }
 
-input[type="radio"]{
+input[type="radio"].radio-freight{
    display: none;
 }
 
-input[type="radio"]:checked + label > .box-details-freight-icone svg{
+input[type="radio"]:checked.radio-freight + label > .box-details-freight-icone svg{
   display: block;
 }
 
-input[type="radio"]:checked + label{
+input[type="radio"]:checked.radio-freight + label{
    border-left: 5px solid #00A202;
 }

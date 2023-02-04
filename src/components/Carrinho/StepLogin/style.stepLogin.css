@@ -1,0 +1,11 @@
+.step-btn-voltar{
+   cursor: pointer;
+   font-size: var(--paragraph-size);
+   color: #fff;
+   background-color: transparent;
+   border: 0;
+}
+
+.step-btn-voltar:hover{
+   color: #87A2FF;
+}

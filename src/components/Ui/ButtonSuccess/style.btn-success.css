@@ -1,0 +1,12 @@
+.btn-success{
+   padding: 12px 15px;
+   background-color: #00A202;
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+   color: #fff;
+}
+
+.btn-success:hover{
+   background-color: #088209;
+}

@@ -13,9 +13,13 @@ export const AuthProvider = ({children}) => {
       const validateToken = async () => {
          const storageData = localStorage.getItem("authToken");
          if(storageData){
-            const data = await api.validateToken(storageData);
-            if(data.user){
-               setUser(data.user)
+            try{
+               const data = await api.validateToken(storageData);
+               if(data.user){
+                  setUser(data.user)
+               }
+            }catch(error){
+               setToken("");
             }
          }
       }

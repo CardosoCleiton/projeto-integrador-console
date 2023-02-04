@@ -3,8 +3,15 @@ import { BsFillCreditCard2BackFill } from "react-icons/bs";
 import "./style.stepCartInfo.css";
 import Input from "../../Ui/Input/Input";
 import DetailsFreight from "../DetailsFreight/DetaisFreight";
+import Carrinho from "../../../pages/Carrinho/Carrinho";
 
-const StepCarInfo = () => {
+const StepCarInfo = ({screen}) => {
+
+   const setScreen = () => {
+      screen("login");
+      return <Carrinho />
+   }
+
    return(
       <>
          <div className="area-items-price">
@@ -26,7 +33,7 @@ const StepCarInfo = () => {
                      <BsFillCreditCard2BackFill />
                      <span>Em até 12x com juros</span>
                   </div>
-                  <button>Fechar Pedido &#8594;</button>
+                  <button onClick={setScreen}>Fechar Pedido &#8594;</button>
                </div>
             </div>
          </div>
