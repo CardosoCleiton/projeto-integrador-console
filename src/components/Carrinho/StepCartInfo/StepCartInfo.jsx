@@ -2,6 +2,7 @@ import CarItem from "../CartItem/CartItem";
 import { BsFillCreditCard2BackFill } from "react-icons/bs";
 import "./style.stepCartInfo.css";
 import Input from "../../Ui/Input/Input";
+import DetailsFreight from "../DetailsFreight/DetaisFreight";
 
 const StepCarInfo = () => {
    return(
@@ -34,6 +35,11 @@ const StepCarInfo = () => {
             <p>Consultar frete e prazo de entrega</p>
             <Input placeholder="00000-000"/>
             <button>Consultar</button>
+
+            <div className="options-freight">
+               <DetailsFreight id="correios" name="freight"/>
+               <DetailsFreight id="pac" name="freight" />
+            </div>
          </div>
       </>
    )

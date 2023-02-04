@@ -80,6 +80,7 @@
 .area-frete{
    margin-top: 50px;
    color: #fff;
+   display: inline-block;
 }
 
 .area-frete p{
@@ -105,6 +106,15 @@
 
 .area-frete button:hover{
    background-color: #4361CC;
+}
+
+.area-frete .options-freight{
+   max-width: 100%;
+   margin-top: 20px;
+}
+
+.area-frete .options-freight label{
+   margin: 10px 0;
 }
 
 @media(max-width: 707px){
