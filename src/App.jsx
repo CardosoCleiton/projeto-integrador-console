@@ -10,6 +10,7 @@ import Processadores from './pages/Processadores/Processadores'
 import Placa from './pages/Placa/Placa'
 import Memoria from "./pages/Memoria/Memoria"
 import Armazenamento from "./pages/Armazenamento/Armazenamento"
+import Cadastro from "./pages/cadastro/Cadastro";
 import Produto from "./pages/Produto/Produto";
 import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -32,6 +33,7 @@ const App = () => {
         <Route path='placas' element={<Placa/>}/>
         <Route path='memoria' element={<Memoria/>}/>
         <Route path='armazenamento' element={<Armazenamento/>}/>
+        <Route path='cadastro' element={<Cadastro/>}/>
         <Route path='/produto/:id' element={<Produto />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='login' element={<Login />} />
