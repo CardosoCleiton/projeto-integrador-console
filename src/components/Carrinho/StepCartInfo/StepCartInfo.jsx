@@ -4,20 +4,47 @@ import "./style.stepCartInfo.css";
 import Input from "../../Ui/Input/Input";
 import DetailsFreight from "../DetailsFreight/DetaisFreight";
 import Carrinho from "../../../pages/Carrinho/Carrinho";
+import { useContext } from "react";
+import { CarrinhoContext } from "../../../contexts/Carrinho/CarrinhoContext";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const StepCarInfo = ({screen}) => {
+
+   const carrinho = useContext(CarrinhoContext);
+   const [products, setProducts] = useState([]);
+
+   useEffect(() => {
+      const allProducts = carrinho.getProducts();
+      setProducts(allProducts)
+      console.log(products);
+   }, [carrinho]); //eslint-disable-line
 
    const setScreen = () => {
       screen("login");
       return <Carrinho />
    }
 
+   const deleteProduct = (productId) => {
+      carrinho.deleteProduct(productId);
+      const newsArrayProducts = products.filter(product => product.id !== productId);
+      setProducts(newsArrayProducts);
+   }
+
    return(
       <>
          <div className="area-items-price">
             <div className="area-products">
-               <CarItem />
-               <CarItem />
+               {products.length > 0 && products.map(product => {
+                  return <CarItem 
+                           price={product.price}
+                           name={product.name}
+                           quantityProduct={product.quantity}
+                           image={product.image} key={product.id}
+                           id={product.id}
+                           removeProduct={deleteProduct}
+                        />
+               })}
             </div>
 
             <div className="area-price">

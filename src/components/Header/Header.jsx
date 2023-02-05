@@ -9,6 +9,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from "../../contexts/Auth/AuthContext";
+import { CarrinhoContext } from '../../contexts/Carrinho/CarrinhoContext'
 
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
   const [visible, setVisible] = useState(true)
 
   const auth = useContext(AuthContext);
+  const carrinho = useContext(CarrinhoContext);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +31,7 @@ const Header = () => {
     return (() => {
       window.removeEventListener("scroll", handleScroll);
     })
-  })
+  }) //eslint-disable-line
   
   const handleLogout = async (event) => {
     event.preventDefault();
@@ -72,7 +74,8 @@ const Header = () => {
             <div className='txt-area-login-icon'>
 
               <div className='carrinho-compras'>
-                <img src={Carrinho} alt=""/>
+                <Link to="/carrinho"><img src={Carrinho} alt=""/></Link>
+                {carrinho.getProducts().length > 0 && <span>{carrinho.getProducts().length}</span>}
               </div>
               <div className='icon-user'>
               <Link to='login' className='a'> 

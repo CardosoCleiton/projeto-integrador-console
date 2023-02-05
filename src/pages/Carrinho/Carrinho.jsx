@@ -30,7 +30,7 @@ const Carrinho = () => {
          </div>
 
          <div className="steps">
-            {screen === "cartInfo" && <StepCarInfo screen={setScreen} />}
+            {screen === "cartInfo" && <StepCarInfo screen={setScreen} key="cartInfo"/>}
             {screen === "login" && <StepLogin screen={setScreen}/>} 
             {screen === "address" && <StepAddress screen={setScreen} />}
             {screen === "payment" && <StepPayment screen={setScreen}/>}
