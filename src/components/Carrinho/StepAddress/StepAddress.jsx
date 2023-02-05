@@ -4,6 +4,7 @@ import DetailsFreight from "../DetailsFreight/DetaisFreight"
 import ButtonSuccess from "../../Ui/ButtonSuccess/ButtonSuccess";
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/Auth/AuthContext"
+import { Link } from "react-router-dom"
 
 export const StepAddress = ({screen}) => {
 
@@ -21,7 +22,7 @@ export const StepAddress = ({screen}) => {
       <>
          <div className="login-area">
             <div className="login-area-form">
-
+               <h1>Selecione um de seus endereços cadastrados para entrega do pedido:</h1>
                <div className="address-input">
                   <input type="radio" id="address1" name="address-pedido" className="radio-address"/>
                   <label htmlFor="address1" className="step-label-address">Avenida Paulista, 253 Casa A, Centro, São Paulo SP</label>
@@ -36,6 +37,8 @@ export const StepAddress = ({screen}) => {
                   <input type="radio" id="address3" name="address-pedido" className="radio-address"/>
                   <label htmlFor="address3" className="step-label-address">Tv Fulano da Silva 253 Casa A, Centro, São Paulo SP</label>
                </div>
+               
+               <Link to="#" className="atualizar-endereco">Atualizar Endereço</Link>
 
                <div className="opcoes-frete">
                   <DetailsFreight id="correios" name="freight"/>
@@ -51,7 +54,7 @@ export const StepAddress = ({screen}) => {
          </div>
          <div className="btns-next-previus">
             <button className="step-btn-voltar" onClick={setPreviusScreen}>&#8592; Voltar</button>
-            <ButtonSuccess>Seguinte</ButtonSuccess>
+            <ButtonSuccess onClick={() => screen("payment")}>Seguinte</ButtonSuccess>
          </div>
       </>
    )

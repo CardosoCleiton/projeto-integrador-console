@@ -8,13 +8,10 @@ import ButtonPrimary from "../../Ui/ButtonPrimary/ButtonPrimary";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./style.stepLogin.css";
-import { StepAddress } from "../StepAddress/StepAddress";
 
 const StepLogin = ({screen}) => {
 
    const auth = useContext(AuthContext);
-
-   
 
    const [email, setEmail] = useState("");
    const [password, setPassword] = useState("");
@@ -36,10 +33,6 @@ const StepLogin = ({screen}) => {
             });
          }
       }
-   }
-
-   if(auth.user){
-      return <StepAddress screen={screen}/>
    }
 
    return(

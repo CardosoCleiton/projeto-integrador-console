@@ -1,0 +1,63 @@
+.title-payment-area{
+   display: flex;
+   margin-bottom: 20px;
+}
+
+.title-payment-area img{
+   color: red;
+}
+
+.icon-card{
+   font-size: 60px;
+   color: #5C7DF2;
+   margin-right: 10px;
+}
+
+.title-payment-area span{
+   font-size: var(--title-size-3);
+   color: #fff;
+}
+
+.input-text-checkout{
+   height: 40px;
+   background-color: #fff;
+   margin: 5px 0;
+   border-radius: 5px;
+   padding-left: 5px;
+}
+
+input.input-text-checkout{
+   border: 0;
+}
+
+input.input-text-checkout:focus{
+   box-shadow: 0 0 0 0;
+   border: 0 none;
+   outline: 0;
+}
+
+button#form-checkout__submit{
+   height: 50px;
+   cursor: pointer;
+   background-color: #00A202;
+   color: #fff;
+   border: 0;
+   border-radius: 5px;
+}
+
+.revisao-pedido h1{
+   font-size: var(--title-size-1);
+   color: #5C7DF2;
+   margin-top: 20px;
+}
+
+.revisao-pedido h2{
+   font-size: var(--title-size-3);
+   color: #5C7DF2;
+   font-weight: 400;
+   margin-top: 10px; 
+}
+
+.revisao-pedido p {
+   color: #fff;
+}

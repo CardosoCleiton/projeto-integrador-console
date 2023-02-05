@@ -13,3 +13,24 @@ input.radio-address{
    display: flex;
    justify-content: space-between;
 }
+
+.login-area-form h1{
+   font-style: normal;
+   font-weight: 400;
+   font-size: var(--title-size-2);
+   line-height: 110%;
+   color: #fff;
+   max-width: 350px;
+   margin-bottom: 30px;
+}
+
+.login-area-form a.atualizar-endereco{
+   color: #fff;
+   display:block;
+   text-align: right;
+   color: #5C7DF2;
+}
+
+.login-area-form a.atualizar-endereco:hover{
+   color: #87A2FF;
+}
