@@ -11,13 +11,14 @@ export const Card = ({name, description, price, image, id}) => {
   const carrinho = useContext(CarrinhoContext);
 
   const addItemCart = () => {
-    carrinho.setProducts({
+    carrinho.addItem({
       name,
       description,
-      price,
+      unitPrice: price,
       image: `${apiConfig.imagesBaseUrl}/${image}`,
       id,
-      quantity: 1
+      quantity: 1,
+      totalPrice: price
     });
   }
 

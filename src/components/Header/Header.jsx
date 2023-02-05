@@ -18,7 +18,7 @@ const Header = () => {
   const [visible, setVisible] = useState(true)
 
   const auth = useContext(AuthContext);
-  const carrinho = useContext(CarrinhoContext);
+  const carrinhoContext = useContext(CarrinhoContext);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +75,7 @@ const Header = () => {
 
               <div className='carrinho-compras'>
                 <Link to="/carrinho"><img src={Carrinho} alt=""/></Link>
-                {carrinho.getProducts().length > 0 && <span>{carrinho.getProducts().length}</span>}
+                {carrinhoContext.carrinho.length > 0 && <span>{carrinhoContext.carrinho.length}</span>}
               </div>
               <div className='icon-user'>
               <Link to='login' className='a'> 

@@ -24,7 +24,6 @@ const StepArea = ({stageScreen}) => {
       default: 
          nivel = 1;
    }
-   console.log(`Step: ${stageScreen} - Nível: ${nivel}`);
 
    return(
       <div className="step-area">

@@ -1,46 +1,67 @@
 // import { useEffect } from "react";
 // import { useState } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { CarrinhoContext } from "./CarrinhoContext";
 
 export const CarrinhoProvider = ({children}) => {
 
-   const getProducts = () => {
-      const products = localStorage.getItem("products");
-      if(products){
-         return JSON.parse(products);
+   const [carrinho, setCarrinho] = useState([]);
+
+   useEffect(() => {
+      const allItems = localStorage.getItem("carrinho");
+      if(allItems){
+         setCarrinho(JSON.parse(allItems));
       }else{
-         return [];
+         setCarrinho([])
       }
+   }, [])
+
+   const addItem = (product) => {
+      setCarrinho((previusCarrinho) => {
+         let newListProducts;
+         //Verifica se o produto já existe no carrinho
+         const index = previusCarrinho.findIndex(item => item.id === product.id);
+         if(index >= 0){
+            previusCarrinho[index].quantity = previusCarrinho[index].quantity + 1;
+            previusCarrinho[index].totalPrice = previusCarrinho[index].quantity * previusCarrinho[index].unitPrice;
+            newListProducts = [...previusCarrinho];
+         }else{
+            newListProducts = [...previusCarrinho, product];
+         }
+         localStorage.setItem("carrinho", JSON.stringify(newListProducts));
+         return newListProducts;
+      });
    }
 
-   const setProducts = (product) => {
-      let allProducts = getProducts();
-      allProducts.push(product);
-      localStorage.setItem("products", JSON.stringify(allProducts));
+   const removeItem = (productId) => {
+      setCarrinho(previusCarrinho => {
+         const newListProducts = previusCarrinho.filter(item => item.id !== productId);
+         localStorage.setItem("carrinho", JSON.stringify(newListProducts));
+         return newListProducts;
+      });
    }
 
-   const alterQuantityProduct = (productId, quantity) => {
-      const allProducts = getProducts();
-      const index = allProducts.findIndex(product => product.id === productId);
-      if(index < 0){
-         return;
-      }
-      allProducts[index].quantity = quantity;
-      localStorage.setItem("products", JSON.stringify(allProducts));
+   const alterQuantity = (productId, quantity) => {
+      setCarrinho(previusCarrinho => {
+         const newListProducts = previusCarrinho;
+         const index = newListProducts.findIndex(item => item.id === productId);
+         if(index >= 0){
+            newListProducts[index].quantity = quantity;
+            newListProducts[index].totalPrice = newListProducts[index].unitPrice * quantity;
+         }
+         localStorage.setItem("carrinho", JSON.stringify(newListProducts));
+         return newListProducts;
+      });
    }
 
-   const deleteProduct = (productId) => {
-      const allProducts = getProducts();
-      let newArrayProducts = allProducts.filter(product => product.id !== productId);
-      if(newArrayProducts.length === 0){
-         newArrayProducts = [];
-      }
-      console.log(newArrayProducts);
-      localStorage.setItem("products", JSON.stringify(newArrayProducts));
+   const getItemById = (productId) => {
+      const findProduct = carrinho.find(product => product.id === productId)
+      return findProduct;
    }
 
    return(
-      <CarrinhoContext.Provider value={{getProducts, setProducts, alterQuantityProduct, deleteProduct}}>
+      <CarrinhoContext.Provider value={{carrinho, addItem, removeItem, alterQuantity, getItemById}}>
          {children}
       </CarrinhoContext.Provider>
    )

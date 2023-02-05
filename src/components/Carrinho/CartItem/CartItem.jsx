@@ -3,30 +3,53 @@ import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 import { useContext } from "react";
 import { CarrinhoContext } from "../../../contexts/Carrinho/CarrinhoContext";
+import { useEffect } from "react";
 
-const CarItem = ({name, quantityProduct, price, image, id, removeProduct}) => {
+const CarItem = ({name, price, image, id, totalPrice, alterSubTotal}) => {
+
+   const carrinhoProvider = useContext(CarrinhoContext);
 
    const [quantity, setQuantity] = useState(1);
+   const [pricePerQuantity, setPricePerQuantity] = useState(totalPrice);
    
-   const carrinho = useContext(CarrinhoContext);
-
+   useEffect(() => {
+      const getQuantity = carrinhoProvider.getItemById(id);
+      setQuantity(getQuantity.quantity);
+   }, []); //eslint-disable-line
+   
    const subtractQuantity = () => {
       if(quantity === 1){
-         return;
+         carrinhoProvider.removeItem(id)
       }
-      const newQuantity = quantity - 1;
-      carrinho.alterQuantityProduct(id, newQuantity);
-      setQuantity(newQuantity);
+      setQuantity(previusQuantity => {
+         //Alterando subtotal
+         alterSubTotal(previusSubTotal => {
+            return previusSubTotal + price;
+         });
+         //Nova quantidade
+         const newQuantity = previusQuantity - 1;
+         setPricePerQuantity(newQuantity * price);
+         carrinhoProvider.alterQuantity(id, newQuantity);
+         return newQuantity;
+      })
    }
 
    const addQuantity = () => {
-      const newQuantity = quantity + 1;
-      carrinho.alterQuantityProduct(id, newQuantity);
-      setQuantity(newQuantity);
+      //Alterando subtotal
+      alterSubTotal(previusSubTotal => {
+         return previusSubTotal + price;
+      });
+
+      //Nova Quantidade
+      setQuantity(previusQuantity => {
+         const newQuantity = previusQuantity + 1;
+         setPricePerQuantity(newQuantity * price);
+         carrinhoProvider.alterQuantity(id, newQuantity);
+         return newQuantity;
+      })
    }
 
-
-   const formatPrice = price?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+   const formatPrice = pricePerQuantity?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
    return(
       <div className="card-item-content">
@@ -47,7 +70,7 @@ const CarItem = ({name, quantityProduct, price, image, id, removeProduct}) => {
          </div>
 
          <div className="excluir-item">
-            <MdDelete onClick={() => removeProduct(id)}/>
+            <MdDelete onClick={() => carrinhoProvider.removeItem(id)}/>
          </div>
       </div>
    )

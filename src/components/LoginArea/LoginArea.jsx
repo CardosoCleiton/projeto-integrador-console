@@ -28,7 +28,6 @@ const LoginArea = () => {
             }
 
          }catch(error){
-            console.log(error);
             toast.error(error.message, {
                position: "top-right",
                theme: "dark"

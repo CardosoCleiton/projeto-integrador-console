@@ -132,3 +132,28 @@
       margin-right: 0;
    }
 }
+
+
+.set-display-none{
+   display: none;
+}
+
+.area-carrinho-vazio{
+   display: block;
+   text-align: center;
+}
+
+.area-carrinho-vazio h1{
+   font-size: var(--title-size-1);
+   color: #fff;
+}
+
+.area-carrinho-vazio a{
+   font-size: var(--title-size-4);
+   color: #5C7DF2;
+   text-decoration: none;
+}
+
+.area-carrinho-vazio a:hover{
+   text-decoration: underline;
+}
