@@ -17,7 +17,7 @@ const DadosPessoais = () => {
             <div className="page-dados-pessais-form">
                 <div>
                     <div className="login-title">
-                    <h1><FaUserAlt className="login-title-icon"/> Dados Pessoais</h1>
+                        <h1><FaUserAlt className="login-title-icon"/> Dados Pessoais</h1>
                     </div>  
                     <form className="form-dados-pessoais"> 
                         <label htmlFor="nome">Nome:</label>                        

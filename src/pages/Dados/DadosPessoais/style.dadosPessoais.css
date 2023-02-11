@@ -5,6 +5,7 @@
    display: flex;
    justify-content: space-between;
    padding: 10px;
+   gap: 20px;
 }
 .page-dados-pessais-form{
    background: #191A1F;
@@ -12,7 +13,6 @@
    border-radius: 5px;
    flex-grow: 1;
    color: #fff;
-   margin-left: 20px;
    padding: 40px 0px;
    display: flex;
    justify-content: center;
@@ -21,7 +21,6 @@
 .form-dados-pessoais{
   display:flex;
   flex-direction: column;
- 
 }
 
 .form-dados-pessoais label, .form-dados-pessoais button{
@@ -34,5 +33,32 @@
 
 .form-dados-pessoais button{
   padding: 15px 0px;
-  font-size: 18px;
+}
+
+.page-dados-pessais-form h1{
+   font-size: var(--title-size-1); 
+}
+
+.page-dados-pessais-form h1 svg{
+   color: #5C7DF2;
+}
+
+@media(max-width: 840px){
+   .form-dados-pessoais input{
+      width: 100%;
+   }
+}
+
+@media(max-width: 687px){
+   .page-dados-pessoais{
+      margin-top: 100px;
+   }
+}
+
+@media(max-width: 580px){
+   .page-dados-pessoais{
+      max-width: 95vw;
+      flex-direction: column;
+      gap: 20px;
+   }
 }

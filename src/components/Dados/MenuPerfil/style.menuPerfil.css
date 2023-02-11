@@ -24,3 +24,11 @@
 .menu-perfil a:hover, a.active{
    background-color: #4361CC;
 }
+
+@media(max-width: 687px){
+   .menu-perfil a {
+      padding: 10px 15px;
+      display: flex;
+      gap: 5px;
+   }
+}
