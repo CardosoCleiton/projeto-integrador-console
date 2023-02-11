@@ -119,7 +119,24 @@ img:hover{
 
 .carrinho-compras{
   margin-right: 4rem;
+  position: relative;
+  padding:10px;
 }
+
+.carrinho-compras span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #D53F49;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
 .txt-area-login{
   padding-left: 1rem;
   font-size: 0.8rem;

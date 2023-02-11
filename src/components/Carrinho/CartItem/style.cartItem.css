@@ -90,6 +90,10 @@
    font-size: 20px;
 }
 
+.excluir-item:hover{
+   color: #992b32;
+}
+
 .excluir-item svg{
    cursor: pointer;
 }

@@ -10,6 +10,7 @@
    display: flex;
    flex-direction: column;
    gap: 20px;
+   max-width: 70%;
 }
 
 .area-price {
@@ -80,6 +81,7 @@
 .area-frete{
    margin-top: 50px;
    color: #fff;
+   display: inline-block;
 }
 
 .area-frete p{
@@ -107,6 +109,15 @@
    background-color: #4361CC;
 }
 
+.area-frete .options-freight{
+   max-width: 100%;
+   margin-top: 20px;
+}
+
+.area-frete .options-freight label{
+   margin: 10px 0;
+}
+
 @media(max-width: 707px){
    .area-items-price{
       flex-direction: column;
@@ -115,9 +126,35 @@
 
    .area-products {
       flex-grow: 1;
+      max-width: 100%;
    }
 
    .area-products {
       margin-right: 0;
    }
+}
+
+
+.set-display-none{
+   display: none;
+}
+
+.area-carrinho-vazio{
+   display: block;
+   text-align: center;
+}
+
+.area-carrinho-vazio h1{
+   font-size: var(--title-size-1);
+   color: #fff;
+}
+
+.area-carrinho-vazio a{
+   font-size: var(--title-size-4);
+   color: #5C7DF2;
+   text-decoration: none;
+}
+
+.area-carrinho-vazio a:hover{
+   text-decoration: underline;
 }

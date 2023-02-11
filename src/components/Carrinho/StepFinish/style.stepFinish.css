@@ -1,0 +1,32 @@
+.step-finish h1{
+   font-size: var(--title-size-1:);
+}
+
+.step-finish h3{
+   font-size: var(--title-size-3);
+   font-weight: 400;
+   color: #5C7DF2;
+}
+
+.step-finish h3 span{
+   color: #fff;
+}
+
+.step-finish p{
+   font-size: var(--paragraph-size);
+   color: #5C7DF2;
+   margin-top: 30px;
+}
+
+.step-finish p span{
+   color: #fff;
+}
+
+.step-finish p a{
+   color: #fff;
+   text-decoration: none;
+}
+
+.step-finish p a:hover{
+   text-decoration: underline;
+}

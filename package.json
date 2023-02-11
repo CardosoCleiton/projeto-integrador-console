@@ -12,6 +12,7 @@
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "react-sdk-mercadopago": "^1.1.1",
     "react-toastify": "^9.1.1",
     "swiper": "^8.4.2",
     "web-vitals": "^2.1.4"

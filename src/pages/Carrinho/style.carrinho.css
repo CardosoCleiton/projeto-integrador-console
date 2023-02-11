@@ -1,7 +1,14 @@
 .page-carrinho{
-   margin-top: 230px;
+   margin-top: 290px;
+   margin-bottom: 60px;
    padding: 20px;
    background: #191A1F;
    box-shadow: inset 0px 0px 136px 32px rgba(0, 0, 0, 0.4);
    border-radius: 5px;
+}
+
+@media(max-width: 688px){
+   .page-carrinho{
+      margin-top: 100px;
+   }
 }

@@ -2,9 +2,25 @@ import React from 'react'
 import './style_cards.css'
 import { apiConfig } from "../../config/variables";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CarrinhoContext } from '../../contexts/Carrinho/CarrinhoContext';
 
 
 export const Card = ({name, description, price, image, id}) => {
+
+  const carrinho = useContext(CarrinhoContext);
+
+  const addItemCart = () => {
+    carrinho.addItem({
+      name,
+      description,
+      unitPrice: price,
+      image: `${apiConfig.imagesBaseUrl}/${image}`,
+      id,
+      quantity: 1,
+      totalPrice: price
+    });
+  }
 
   const formatPrice = price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
@@ -21,7 +37,7 @@ export const Card = ({name, description, price, image, id}) => {
           <p className='descricao-preco-card'>{formatPrice}</p>
         </div>
       </Link>
-      <button className='btn-card'>Adcionar ao carrinho</button>
+      <button className='btn-card' onClick={addItemCart}>Adcionar ao carrinho</button>
 
     </div>
   )
