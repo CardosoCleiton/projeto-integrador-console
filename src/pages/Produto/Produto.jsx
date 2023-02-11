@@ -36,7 +36,7 @@ const Produto = () => {
 
    if(loading){
       return(
-         <Loading />
+         <Loading margin={true} center={true}/>
       )
    }
 

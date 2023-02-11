@@ -4,20 +4,29 @@ import "./style.stepCartInfo.css";
 import Input from "../../Ui/Input/Input";
 import DetailsFreight from "../DetailsFreight/DetaisFreight";
 import Carrinho from "../../../pages/Carrinho/Carrinho";
-import { useState } from "react";
-import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import Loading from "../../Ui/Loading/Loading";
 
 
-const StepCarInfo = ({screen, carrinho, subTotal, alterSubTotal, frete, total, calcularFrete, setFrete}) => {
+const StepCarInfo = ({
+   screen,
+   carrinho,
+   subTotal,
+   alterSubTotal,
+   frete,
+   total,
+   setFrete,
+   tiposFrete,
+   cep,
+   setCep,
+   loadingFrete,
+   calcularPrecoFrete
+}) => {
    
    const setScreen = () => {
       screen("login");
       return <Carrinho />
    }
-
-   const [cep, setCep] = useState("");
-   const [tiposFrete, setTiposFrete] = useState([]);
 
    const validateInputCep = (event) => {
       let value = event.target.value;
@@ -32,18 +41,7 @@ const StepCarInfo = ({screen, carrinho, subTotal, alterSubTotal, frete, total, c
       }
       return;
    }
-
-   const calcularPrecoFrete = async () => {
-      if(cep.length < 8){
-         toast.error("CEP Inválido", {
-            position: "top-right",
-            theme: "dark"
-         });
-      }
-      const valueFrete = await calcularFrete(cep);
-      setTiposFrete(valueFrete);
-   }
-
+  
    return(
       <>
          <div className={`area-items-price ${carrinho.length === 0 ? "set-display-none" : ""}`}>
@@ -82,8 +80,8 @@ const StepCarInfo = ({screen, carrinho, subTotal, alterSubTotal, frete, total, c
          <div className={`area-frete ${carrinho.length === 0 ? "set-display-none" : ""}`}>
             <p>Consultar frete e prazo de entrega</p>
             <Input placeholder="Somente números" type="text" onChange={validateInputCep} value={cep}/>
-            <button onClick={calcularPrecoFrete}>Consultar</button>
-
+            <button onClick={() => calcularPrecoFrete(cep)}>Consultar</button>
+            {loadingFrete && <Loading />}
             <div className="options-freight">
                {tiposFrete.map((frete, index) => {
                   return <DetailsFreight tipofrete={frete.type} deadline={frete.deadline} price={frete.price} key={index} id={frete.typeId} setFrete={setFrete}/>

@@ -51,6 +51,10 @@ button#form-checkout__submit{
    margin-top: 20px;
 }
 
+.revisao-pedido h2 span{
+   color: #fff;
+}
+
 .revisao-pedido h2{
    font-size: var(--title-size-3);
    color: #5C7DF2;
@@ -60,4 +64,5 @@ button#form-checkout__submit{
 
 .revisao-pedido p {
    color: #fff;
+   margin: 10px 0;
 }

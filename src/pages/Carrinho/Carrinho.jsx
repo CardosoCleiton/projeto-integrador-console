@@ -11,6 +11,7 @@ import { AuthContext } from "../../contexts/Auth/AuthContext";
 import { CarrinhoContext } from "../../contexts/Carrinho/CarrinhoContext";
 import { useEffect } from "react";
 import { calcularFrete } from "../../api/enpoints/frete/calcular-frete";
+import { toast } from "react-toastify";
 
 const Carrinho = () => {
 
@@ -21,6 +22,11 @@ const Carrinho = () => {
    const [subTotal, setSubTotal] = useState(0.0);
    const [total, setTotal] = useState(0.0);
    const [frete, setFrete] = useState(0.0);
+   const [address, setAddress] = useState(null);
+   const [tiposFrete, setTiposFrete] = useState([]);
+   const [selectTipoFrete, setSelectTipoFrete] = useState({});
+   const [cep, setCep] = useState("");
+   const [loadingFrete, setLoadingFrete] = useState(false);
    
    useEffect(() => {
       if(auth.user && screen === "login"){
@@ -35,16 +41,30 @@ const Carrinho = () => {
       //Calculo total:
       const priceTotal = priceSubTotal + frete;
       setTotal(priceTotal);
-   }, [screen, auth, subTotal, carrinhoProvider, frete]);
+   }, [screen, auth, subTotal, carrinhoProvider, frete, selectTipoFrete]);
+
 
    const calcularPrecoFrete = async (cep) => {
-      const fretePrice = await calcularFrete({
-         items: carrinhoProvider.carrinho,
-         cep
-      });
-      return fretePrice;
+      setLoadingFrete(true);
+      setTiposFrete([]);
+      try{
+         const fretePrice = await calcularFrete({
+            items: carrinhoProvider.carrinho,
+            cep
+         });
+         setTiposFrete(fretePrice);
+         setLoadingFrete(false);
+      }catch(error){
+         toast.error("CEP Inválido", {
+            position: "top-right",
+            theme: "dark"
+         });
+         setLoadingFrete(false);
+         return;
+      }
    }
-  
+
+
    return (
       <main className="page-carrinho">
          <div className="stepStage">
@@ -60,12 +80,35 @@ const Carrinho = () => {
                                           frete={frete}
                                           total={total}
                                           calcularFrete={calcularPrecoFrete}
+                                          tiposFrete={tiposFrete}
+                                          cep={cep}
+                                          setCep={setCep}
                                           setFrete={setFrete}
+                                          loadingFrete={loadingFrete}
+                                          calcularPrecoFrete={calcularPrecoFrete}
                                        />
             }
             {screen === "login" && <StepLogin screen={setScreen}/>} 
-            {screen === "address" && <StepAddress screen={setScreen} />}
-            {screen === "payment" && <StepPayment screen={setScreen}/>}
+            {screen === "address" && <StepAddress
+                                          screen={setScreen}
+                                          calcularPrecoFrete={calcularPrecoFrete}
+                                          setCep={setCep}
+                                          tiposFrete={tiposFrete}
+                                          setTiposFrete={setTiposFrete}
+                                          setFrete={setFrete}
+                                          loadingFrete={loadingFrete}
+                                          setLoadingFrete={setLoadingFrete}
+                                          setAddress={setAddress}
+                                          address={address}
+                                          setSelectTipoFrete={setSelectTipoFrete}
+                                       />}
+            {screen === "payment" && <StepPayment
+                                       screen={setScreen}
+                                       address={address}
+                                       totalPrice={total}
+                                       tipoFrete={tiposFrete}
+                                       selectTipoFrete={selectTipoFrete}
+                                    />}
             {screen === "finish" && <StepFinish screen={setScreen}/>}
          </div>             
 
