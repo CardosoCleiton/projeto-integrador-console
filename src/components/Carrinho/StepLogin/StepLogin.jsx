@@ -48,7 +48,7 @@ const StepLogin = ({screen}) => {
             <div className="login-area-form">
                <div className="login-title">
                   <h1><FaUserAlt className="login-title-icon"/> Login do Cliente</h1>
-                  <div>Veja seus pedidos de forma fácil, compre mais rápido e tenha uma experiência personalizada :)</div>
+                  <div>Faça seu login ou cadastro para prosseguir com o pedido.</div>
                </div>
 
                <form onSubmit={handleLogin}>

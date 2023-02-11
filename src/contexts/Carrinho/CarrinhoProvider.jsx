@@ -60,8 +60,13 @@ export const CarrinhoProvider = ({children}) => {
       return findProduct;
    }
 
+   const clearCart = () => {
+      setCarrinho([]);
+      localStorage.setItem("carrinho", []);
+   }
+
    return(
-      <CarrinhoContext.Provider value={{carrinho, addItem, removeItem, alterQuantity, getItemById}}>
+      <CarrinhoContext.Provider value={{carrinho, addItem, removeItem, alterQuantity, getItemById, clearCart}}>
          {children}
       </CarrinhoContext.Provider>
    )

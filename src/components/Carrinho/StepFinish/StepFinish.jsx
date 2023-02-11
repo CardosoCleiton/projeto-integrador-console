@@ -1,15 +1,35 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import imageCelebration from "../../../images/uhu.svg";
+import Loading from "../../Ui/Loading/Loading"
 import "./style.stepFinish.css";
+import { listAllOrder } from "../../../api/enpoints/order/list-all-order";
 
 const StepFinish = () => {
+
+   const [loading, setLoading] = useState(true);
+   const [order, setOrder] = useState({});
+
+   useState(() => {
+      const token = localStorage.getItem("authToken");
+      (async () => {
+         const orders = await listAllOrder(token);
+         setOrder(orders[0]);
+         setLoading(false);
+      })();
+   })
+
+   if(loading){
+      return <Loading center={true}/>
+   }
+
    return(
       <div className="login-area">
 
             <div className="login-area-form step-finish">
                <h1>Uhuu! Você acaba de finalizar seu pedido.</h1>
-               <h3>N° do pedido: <span>156456</span></h3>
-               <p>Status: <span>Seu Pagamento foi aprovado, agora nossa equipe está preparando seu pedido para envio.</span></p>
+               <h3>N° do pedido: <span>{order.id}</span></h3>
+               <p>Status: <span>{order.history_status_orders[0].description}</span></p>
                <p>Confira os detalhes em: <Link to="#">meus pedidos</Link></p>
             </div>
 

@@ -13,13 +13,14 @@ const StepPayment = ({screen, address, totalPrice, tipoFrete, selectTipoFrete}) 
 
   const carrinhoProvider = useContext(CarrinhoContext);
   const [loading, setLoading] = useState(false);
+  const [completedPayment, setCompletedPayment] = useState(true);
 
   const orderItems = carrinhoProvider.carrinho.map((item => ({productId: item.id, quantity: item.quantity})));
   const freight = {
     addressId: address.id,
     freightType: selectTipoFrete.id
   }
-  console.log(selectTipoFrete);
+  
   const authToken = localStorage.getItem("authToken");
   const mercadopago = useMercadopago.v2("TEST-b72afe12-29f4-4f43-9e35-b5120d178389");
 
@@ -90,7 +91,7 @@ const StepPayment = ({screen, address, totalPrice, tipoFrete, selectTipoFrete}) 
               token,
               issuer_id,
               payment_method_id,
-              transaction_amount: Number(amount),
+              transaction_amount: parseFloat(amount).toFixed(2),
               installments: Number(installments),
               description: "Descrição do produto",
               payer: {
@@ -104,15 +105,20 @@ const StepPayment = ({screen, address, totalPrice, tipoFrete, selectTipoFrete}) 
             
             setLoading(true);
             try{
+              setCompletedPayment(false);
               await createOrder(objRequest, {orderItems, freight}, authToken);
+              carrinhoProvider.clearCart();
+              setCompletedPayment(true);
               setLoading(false);
               screen("finish");
             }catch(error){
-              setLoading(false);
-              toast.error(error.response.data.message, {
-                position: "top-right",
-                theme: "dark"
-             });
+              if(!completedPayment){
+                setLoading(false);
+                toast.error(error.response.data.message, {
+                  position: "top-right",
+                  theme: "dark"
+               });
+              }
             }
           },
           onFetching: (resource) => {
@@ -129,7 +135,7 @@ const StepPayment = ({screen, address, totalPrice, tipoFrete, selectTipoFrete}) 
         },
       });
     }
-  });
+  }, [mercadopago]); //eslint-disable-line
 
   if(loading){
     return <Loading center={true}/>
