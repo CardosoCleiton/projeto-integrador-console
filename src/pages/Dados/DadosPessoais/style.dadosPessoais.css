@@ -1,0 +1,22 @@
+.page-dados-pessoais{
+   max-width: 80vw;
+   margin-top: 270px;
+   margin-bottom: 30px;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+}
+
+.page-dados-pessoais-menu{
+   /* padding: 10px; */
+}
+
+.page-dados-pessais-form{
+   background: #191A1F;
+   box-shadow: inset 0px 0px 136px 32px rgba(0, 0, 0, 0.4);
+   border-radius: 5px;
+   flex-grow: 1;
+   color: #fff;
+   margin-left: 20px;
+   padding: 10px;
+}
