@@ -13,6 +13,7 @@ import Placa from './pages/Placa/Placa'
 import Memoria from "./pages/Memoria/Memoria"
 import Armazenamento from "./pages/Armazenamento/Armazenamento"
 import Cadastro from "./pages/cadastro/Cadastro";
+import Enderecos from "./pages/Dados/Enderecos/Ederecos";
 import Produto from "./pages/Produto/Produto";
 import DadosPessoais from "./pages/Dados/DadosPessoais/DadosPessoais";
 import NotFound from "./pages/NotFound/NotFound";
@@ -42,8 +43,8 @@ const App = () => {
         <Route path='login' element={<Login />} />
         <Route path='404' element={<NotFound />} />
         <Route path='dados/dados-pessoais' element={<DadosPessoais/>} />
-      {/*   <Route path="dados/pedidos" element={<Pedidos/>} />
-        <Route path="dados/enderecos" element={<Enderecos/>} /> */}
+      {/*  <Route path="dados/pedidos" element={<Pedidos/>} /> */}
+        <Route path="dados/enderecos" element={<Enderecos/>} /> 
         <Route path="*" element={<Navigate to="/404" />}/>
       </Routes>
       <Footer/>

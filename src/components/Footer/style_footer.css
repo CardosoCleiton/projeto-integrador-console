@@ -119,7 +119,7 @@ footer a{
 @media(max-width: 1024px){
 
     .footer-generic3 .central-atendimento a{
-
+        margin-right: 5px;
     }
     
     .footer-generic3 .central-atendimento a img{
@@ -146,10 +146,6 @@ footer a{
 }
 
 @media(max-width:687px){
-
-    .content{
-        flex-direction: column;
-    }
 
     .content > div.footer-card{
         width: 100%;

@@ -1,0 +1,22 @@
+.page-enderecos{
+    max-width: 80vw;
+    margin-top: 270px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
+}
+
+.page-adicionar-endereco{
+    font-size: 26px;
+    margin-top: 30px;
+}
+
+.page-title-cadastrar-endereco{
+    font-size: 32px;
+    margin-left: 70px;
+    margin-top: 25px;
+
+}
+
