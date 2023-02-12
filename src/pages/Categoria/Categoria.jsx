@@ -24,10 +24,10 @@ export const Categoria = () => {
             }else{
                return [...previusProducts, ...allProducts.rows]
             }
-         })
+         });
          setLoading(false);
       })()
-   }, [page]); //eslint-disable-line
+   }, [page, categoria]); //eslint-disable-line
    
    if(loading){
       return <Loading center={true} margin={true}/>

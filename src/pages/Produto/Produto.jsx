@@ -3,21 +3,33 @@ import "./style.produto.css";
 import Loading from "../../components/Ui/Loading/Loading";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { findProductById } from "../../api/enpoints/products/find-product-by-id";
 import { listProductByCategory } from "../../api/enpoints/products/list-product-by-category";
 import { apiConfig } from "../../config/variables"
 import SliderCards from "../../components/Cards/SliderCards";
 import { Card } from "../../components/Cards/Card";
+import DetailsFreight from "../../components/Carrinho/DetailsFreight/DetaisFreight";
+import { calcularFrete } from "../../api/enpoints/frete/calcular-frete";
+import { toast } from "react-toastify";
+import { useContext } from "react";
+import { CarrinhoContext } from "../../contexts/Carrinho/CarrinhoContext";
 
 
 const Produto = () => {
+
+   const carrinhoProvider = useContext(CarrinhoContext);
+   const navigate = useNavigate();
 
    const [produto, setProduto] = useState({});
    const [loading, setLoading] = useState(true);
    const [selectedImg, setSelectedImg] = useState("");
    const [relatedItems, setRelatedItems] = useState({});
 
+   //FRETE
+   const [cep, setCep] = useState("");
+   const [tiposFrete, setTiposFrete] = useState([]);
+   const [loadingFrete, setLoadingFrete] = useState(false);
    const { id } = useParams();
 
    useEffect(() => {
@@ -32,6 +44,54 @@ const Produto = () => {
       }
      loadingApi();
    }, [setProduto, setLoading, setSelectedImg, id]); // eslint-disable-line
+
+
+   const calcularPrecoFrete = async (cep) => {
+      setLoadingFrete(true);
+      setTiposFrete([]);
+      try{
+         const fretePrice = await calcularFrete({
+            items: [produto],
+            cep
+         });
+         setTiposFrete(fretePrice);
+         setLoadingFrete(false);
+      }catch(error){
+         toast.error("CEP Inválido", {
+            position: "top-right",
+            theme: "dark"
+         });
+         setLoadingFrete(false);
+         return;
+      }
+   }
+
+   const validateInputCep = (event) => {
+      let value = event.target.value;
+      if(value.includes(".")){
+         value = value.replace(".", "");
+      }
+      if(value.length > 8){
+         return;
+      }
+      if(!isNaN(value)){
+         setCep(value);
+      }
+      return;
+   }
+
+   const efetuarCompra = () => {
+      carrinhoProvider.addItem({
+         name: produto.name,
+         description: produto.description,
+         unitPrice: produto.price,
+         image: `${apiConfig.imagesBaseUrl}/${produto.image_products[0].name}`,
+         id: produto.id,
+         quantity: 1,
+         totalPrice: produto.price
+      });
+      return navigate("/carrinho");
+   }
 
 
    if(loading){
@@ -76,7 +136,7 @@ const Produto = () => {
                      <span className="parcelamento">Em até 12x com juros</span>
                   </div>
 
-                  <button className="btn-comprar">
+                  <button className="btn-comprar" onClick={efetuarCompra}>
                      <HiShoppingCart />
                      COMPRAR
                   </button>
@@ -84,8 +144,16 @@ const Produto = () => {
                   <div className="frete">
                      <label htmlFor="frete">Consultar frete e prazo de entrega</label>
                      <div>
-                        <input type="text" name="frete" id="frete" placeholder="Inserir CEP" />
-                        <button>OK</button>
+                        <input type="text" name="frete" id="frete" placeholder="Inserir CEP" onChange={validateInputCep} value={cep}/>
+                        <button onClick={() => calcularPrecoFrete(cep)}>OK</button>
+                     </div>
+                     <div className="produto-area-frete">
+                        {loadingFrete && <div><Loading center={true}/></div>}
+                        {tiposFrete.map((frete, index) => {
+                           return(
+                              <div key={index}><DetailsFreight tipofrete={frete.type} deadline={frete.deadline} price={frete.price} id={frete.typeId} /></div>
+                           )
+                        })}
                      </div>
                   </div>
                </div>

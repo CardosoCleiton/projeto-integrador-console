@@ -38,7 +38,7 @@ const App = () => {
     <BrowserRouter>
     <ToastContainer autoClose={3000}/>
       <HeaderMobile />
-      <Header />
+      <Header categorias={categories}/>
       {loading && <Loading center={true} margin={true}/>}
       {!loading && 
         <Routes>
