@@ -16,6 +16,7 @@ import Cadastro from "./pages/cadastro/Cadastro";
 import Enderecos from "./pages/Dados/Enderecos/Ederecos";
 import Produto from "./pages/Produto/Produto";
 import DadosPessoais from "./pages/Dados/DadosPessoais/DadosPessoais";
+import Pedidos from "./pages/Dados/Pedidos/Pedidos";
 import NotFound from "./pages/NotFound/NotFound";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from "./pages/Login/Login";
@@ -43,7 +44,7 @@ const App = () => {
         <Route path='login' element={<Login />} />
         <Route path='404' element={<NotFound />} />
         <Route path='dados/dados-pessoais' element={<DadosPessoais/>} />
-      {/*  <Route path="dados/pedidos" element={<Pedidos/>} /> */}
+        <Route path="dados/pedidos" element={<Pedidos/>} />
         <Route path="dados/enderecos" element={<Enderecos/>} /> 
         <Route path="*" element={<Navigate to="/404" />}/>
       </Routes>
