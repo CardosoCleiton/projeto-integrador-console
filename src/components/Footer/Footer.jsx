@@ -9,7 +9,7 @@ import email from "../../images/mail.png"
 import "./style_footer.css"
 import {Link} from "react-router-dom"
 
-const Footer = () => {
+const Footer = ({departamentos}) => {
 
     return (
         <footer>
@@ -25,11 +25,10 @@ const Footer = () => {
                 <div className="footer-generic2 footer-card">
                     <div className="departamentos">
                         <h3>DEPARTAMENTOS</h3>
-                        <Link to='/monitores'>Monitores</Link>
-                        <Link to='/processadores'>Processadores</Link>
-                        <Link to='/placas'>Placas</Link>
-                        <Link to='/memoria'>Memórias</Link>
-                        <Link to='/armazenamento'>Armazenamento</Link>
+                        {departamentos.map(departamento =>{
+                            return <Link to={`/categorias/${departamento.slug}`}>{departamento.name}</Link>
+                        })}
+                        
                     </div>
                     <div className="footer-wrapper">
                         <h3>FORMAS DE PAGAMENTO</h3>
