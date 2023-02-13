@@ -26,7 +26,7 @@ const Footer = ({departamentos}) => {
                     <div className="departamentos">
                         <h3>DEPARTAMENTOS</h3>
                         {departamentos.map(departamento =>{
-                            return <Link to={`/categorias/${departamento.slug}`}>{departamento.name}</Link>
+                            return <Link to={`/categorias/${departamento.slug}`} key={departamento.id}>{departamento.name}</Link>
                         })}
                         
                     </div>
