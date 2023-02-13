@@ -6,8 +6,6 @@ import "./style.menuPerfil.css";
 
 const MenuPerfil = ({page}) => {
 
-   console.log(page);
-
    return(
       <nav>
          <ul className="menu-perfil">

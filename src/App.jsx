@@ -1,17 +1,10 @@
 import React from "react";
-
-
 //Components
 import Header from './components/Header/Header'
 import Footer from "./components/Footer/Footer"
 import HeaderMobile from './components/HeaderMobile/HeaderMobile'
 //Paginas
 import Home from './pages/Home/Home'
-import Monitores from './pages/Monitores/Monitores'
-import Processadores from './pages/Processadores/Processadores'
-import Placa from './pages/Placa/Placa'
-import Memoria from "./pages/Memoria/Memoria"
-import Armazenamento from "./pages/Armazenamento/Armazenamento"
 import Cadastro from "./pages/cadastro/Cadastro";
 import Enderecos from "./pages/Dados/Enderecos/Ederecos";
 import Produto from "./pages/Produto/Produto";
@@ -22,32 +15,50 @@ import Login from "./pages/Login/Login";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Carrinho from "./pages/Carrinho/Carrinho";
+import { useEffect } from "react";
+import { useState } from "react";
+import Loading from "./components/Ui/Loading/Loading";
+import { listAllCategory } from "./api/enpoints/categories/list-all-category";
+import { Categoria } from "./pages/Categoria/Categoria";
 
 
 const App = () => {
+
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const allCategories = await listAllCategory();
+      setCategories(allCategories);
+      setLoading(false);
+    })();
+  }, []);
+  console.log(categories);
   return (
     <BrowserRouter>
     <ToastContainer autoClose={3000}/>
       <HeaderMobile />
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='monitores' element={<Monitores/>}/>
-        <Route path='processadores' element={<Processadores/>}/>
-        <Route path='placas' element={<Placa/>}/>
-        <Route path='memoria' element={<Memoria/>}/>
-        <Route path='armazenamento' element={<Armazenamento/>}/>
-        <Route path='cadastro' element={<Cadastro/>}/>
-        <Route path='/produto/:id' element={<Produto />} />
-        <Route path='/carrinho' element={<Carrinho />} />
-        <Route path='login' element={<Login />} />
-        <Route path='404' element={<NotFound />} />
-        <Route path='dados/dados-pessoais' element={<DadosPessoais/>} />
-      {/*  <Route path="dados/pedidos" element={<Pedidos/>} /> */}
-        <Route path="dados/enderecos" element={<Enderecos/>} /> 
-        <Route path="*" element={<Navigate to="/404" />}/>
-      </Routes>
-      <Footer/>
+      <Header categorias={categories}/>
+      {loading && <Loading center={true} margin={true}/>}
+      {!loading && 
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          {categories.map(categorie => {
+            return <Route path="/categorias/:categoria" element={<Categoria />} key={categorie.id}/>
+          })}
+          <Route path='/cadastro' element={<Cadastro/>}/>
+          <Route path='/produto/:id' element={<Produto />} />
+          <Route path='/carrinho' element={<Carrinho />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/404' element={<NotFound />} />
+          <Route path='/dados/dados-pessoais' element={<DadosPessoais/>} />
+        {/*  <Route path="dados/pedidos" element={<Pedidos/>} /> */}
+          <Route path="dados/enderecos" element={<Enderecos/>} /> 
+          <Route path="*" element={<Navigate to="/404" />}/>
+        </Routes>
+      }
+      <Footer departamentos={categories}/>
     </BrowserRouter>
 
   )

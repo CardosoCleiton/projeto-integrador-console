@@ -9,7 +9,7 @@ export async function calcularFrete({items, cep}){
             items: items.map(item => {
                return {
                   productId: item.id,
-                  quantity: item.quantity
+                  quantity: item.quantity ?? 1
                }
             }),
             address: {

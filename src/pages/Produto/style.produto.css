@@ -190,6 +190,33 @@ h1.title-style{
    margin-top: 40px;
 }
 
+.produto-area-frete{
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+}
+
+.produto-area-frete div{
+   width: 100%;
+}
+
+.produto-area-frete div label.box-details-freight{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+}
+
+.produto-area-frete div label.box-details-freight .box-details-freight-icone{
+   width: 60px;
+   height: 60px;
+}
+
+.produto-area-frete div label.box-details-freight .box-details-freight-prazo{
+   display: flex;
+   flex-direction: column;
+}
+
 @media(max-width:1024px){
    .page-produto{
       margin-top: 130px;

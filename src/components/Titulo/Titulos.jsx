@@ -7,7 +7,7 @@ export default function Titulo(props){
     <div className='titulo'>
       <div className='processadores'>{props.name}</div>
       <div className='vejamais-e-seta'>
-      <Link to={"/"+props.page} className='veja-mais'>Veja mais</Link>
+      <Link to={"/categorias/"+props.page} className='veja-mais'>Veja mais</Link>
       <img src={Vejamais} alt=""/>
       </div>
     </div>
