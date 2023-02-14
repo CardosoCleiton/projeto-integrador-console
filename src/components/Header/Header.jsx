@@ -12,10 +12,10 @@ import { AuthContext } from "../../contexts/Auth/AuthContext";
 import { CarrinhoContext } from '../../contexts/Carrinho/CarrinhoContext'
 
 
-const Header = () => {
+const Header = ({categorias}) => {
 
-  const [position, setPosition] = useState(window.pageYOffset)
-  const [visible, setVisible] = useState(true)
+  const [position, setPosition] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
 
   const auth = useContext(AuthContext);
   const carrinhoContext = useContext(CarrinhoContext);
@@ -31,7 +31,7 @@ const Header = () => {
     return (() => {
       window.removeEventListener("scroll", handleScroll);
     })
-  }) //eslint-disable-line
+  }, [position, visible]) //eslint-disable-line
   
   const handleLogout = async (event) => {
     event.preventDefault();
@@ -94,8 +94,8 @@ const Header = () => {
                       <li>Minha Conta &#9660;
                         <ul>
                           <li><Link to="/pedidos">Pedidos</Link></li>
-                          <li><Link to="/cadastro">Cadastro</Link></li>
-                          <li><Link to="/enderecos">Endereços</Link></li>
+                          <li><Link to="/dados/dados-pessoais">Cadastro</Link></li>
+                          <li><Link to="/dados/enderecos">Endereços</Link></li>
                           <li><Link to="#" onClick={handleLogout}>Sair da conta</Link></li>
                         </ul>
                       </li>
@@ -113,11 +113,9 @@ const Header = () => {
         <div className='nav-total'>
           <nav>
             <ul>
-              <li><Link to='monitores' className='a'>Monitor</Link> <span className='monitor'></span></li>
-              <li><Link to='processadores' className='a'>Processador</Link></li>
-              <li><Link to='placas' className='a'>Placa de vídeo</Link></li>
-              <li><Link to='memoria' className='a'>Memoria RAM</Link></li>
-              <li> <Link to='armazenamento' className='a'>Armazenamento</Link></li>
+              {categorias.map(categoria => {
+                return <li key={categoria.id}><Link to={`/categorias/${categoria.slug}`} className='a'>{categoria.name}</Link></li>
+              })}
             </ul>
           </nav>
         </div>

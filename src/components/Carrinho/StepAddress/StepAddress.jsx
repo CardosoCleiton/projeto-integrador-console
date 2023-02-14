@@ -84,7 +84,7 @@ export const StepAddress = ({screen, setCep, calcularPrecoFrete, tiposFrete, set
                   )
                })}
                
-               <Link to="#" className="atualizar-endereco">Atualizar Endereço</Link>
+               <Link to="/dados/enderecos" className="atualizar-endereco">Atualizar Endereço</Link>
 
                <div className="opcoes-frete">
                   {loadingFrete && <Loading />}
