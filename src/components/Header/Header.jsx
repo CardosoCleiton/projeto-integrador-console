@@ -95,7 +95,7 @@ const Header = ({categorias}) => {
                         <ul>
                           <li><Link to="/pedidos">Pedidos</Link></li>
                           <li><Link to="/dados/dados-pessoais">Cadastro</Link></li>
-                          <li><Link to="/enderecos">Endereços</Link></li>
+                          <li><Link to="/dados/enderecos">Endereços</Link></li>
                           <li><Link to="#" onClick={handleLogout}>Sair da conta</Link></li>
                         </ul>
                       </li>

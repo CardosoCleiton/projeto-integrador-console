@@ -15,12 +15,12 @@ const MenuPerfil = ({page}) => {
                </Link>
             </li>
             <li>
-               <Link to="#" className={page === "pedidos" ? "active" : ""}>
+               <Link to="/dados/enderecos" className={page === "pedidos" ? "active" : ""}>
                   <BsFillBasket3Fill />Pedidos
                </Link>
             </li>
             <li>
-               <Link to="#" className={page === "enderecos" ? "active" : ""}>
+               <Link to="/dados/enderecos" className={page === "enderecos" ? "active" : ""}>
                   <HiLocationMarker />Endereços
                </Link>
             </li>

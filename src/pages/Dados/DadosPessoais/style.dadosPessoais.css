@@ -43,22 +43,21 @@
    color: #5C7DF2;
 }
 
-@media(max-width: 840px){
-   .form-dados-pessoais input{
-      width: 100%;
+@media(max-width: 900px){
+   .page-dados-pessoais{
+      max-width: 90vw;
    }
 }
 
 @media(max-width: 687px){
-   .page-dados-pessoais{
-      margin-top: 100px;
-   }
-}
 
-@media(max-width: 580px){
    .page-dados-pessoais{
+      max-width: 90vw;
+      margin-top: 100px;
+      gap: 10px;
       max-width: 95vw;
       flex-direction: column;
       gap: 20px;
    }
+
 }

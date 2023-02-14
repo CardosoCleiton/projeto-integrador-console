@@ -54,7 +54,7 @@ const App = () => {
           <Route path='/404' element={<NotFound />} />
           <Route path='/dados/dados-pessoais' element={<DadosPessoais/>} />
         {/*  <Route path="dados/pedidos" element={<Pedidos/>} /> */}
-          <Route path="dados/enderecos" element={<Enderecos/>} /> 
+          <Route path="/dados/enderecos" element={<Enderecos/>} /> 
           <Route path="*" element={<Navigate to="/404" />}/>
         </Routes>
       }
