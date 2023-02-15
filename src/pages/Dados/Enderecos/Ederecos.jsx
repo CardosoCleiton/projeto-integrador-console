@@ -82,12 +82,12 @@ const Enderecos = () => {
             <div className='form-editar-endereco' style={hiddenFormEdit === true ? {display: "none"} : {display: "block"}}>
                 <h2 className="page-title-cadastrar-endereco">Atualizar Endereço</h2>
                 <form className="form-dados-pessoais">
-
-                    <label htmlFor="tipo-endereco">Tipo de Endereço:</label>
-                    <select name="tipo-endereco" id="tipo-endereco" defaultValue="Residencial">
-                        <option value="Residencial" selected={editarEndereco.type === "Residencial" ? true : false}>Residencial</option>
-                        <option value="Comercial" selected={editarEndereco.type === "Comercial" ? true : false}>Comercial</option>
-                        <option value="Alternativo" selected={editarEndereco.type === "Alternativo" ? true : false}>Alternativo</option>
+ 
+                    <label htmlFor="tipo-endereco" defaultValue={editarEndereco.type}>Tipo de Endereço:</label>
+                    <select name="tipo-endereco" id="tipo-endereco">
+                        <option value="Residencial">Residencial</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Alternativo">Alternativo</option>
                     </select>
 
                     <label htmlFor="cep">CEP:</label>

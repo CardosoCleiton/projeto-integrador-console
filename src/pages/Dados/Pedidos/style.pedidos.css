@@ -1,5 +1,26 @@
 .page-sem-pedidos{
     font-size: 18px;
     margin-top: 50px;
+    text-align: center;
+}
 
+div.page-pedidos{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.page-pedidos .login-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.box-pedidos{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }

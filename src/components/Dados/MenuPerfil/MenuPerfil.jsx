@@ -15,7 +15,7 @@ const MenuPerfil = ({page}) => {
                </Link>
             </li>
             <li>
-               <Link to="/dados/enderecos" className={page === "pedidos" ? "active" : ""}>
+               <Link to="/dados/pedidos" className={page === "pedidos" ? "active" : ""}>
                   <BsFillBasket3Fill />Pedidos
                </Link>
             </li>

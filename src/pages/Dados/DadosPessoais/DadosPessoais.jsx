@@ -74,16 +74,16 @@ const DadosPessoais = () => {
                     </div>  
                     <form className="form-dados-pessoais"> 
                         <label htmlFor="nome">Nome:</label>                        
-                        <Input value={nome} onChange={alterarNome}/>
+                        <Input value={nome ?? ""} onChange={alterarNome}/>
 
                         <label htmlFor="email">Email: </label>                      
-                        <Input value={email} id="email" onChange={alterarEmail}/>     
+                        <Input value={email ?? ""} id="email" onChange={alterarEmail}/>     
 
                         <label htmlFor="cpf">CPF:</label>
-                        <Input value={cpf} onChange={alterarCpf}/>                       
+                        <Input value={cpf ?? ""} onChange={alterarCpf}/>                       
                     
                         <label>Data de Nascimento:</label>
-                        <Input type="date" value={dtNasc} onChange={alterarDtNasc} required />
+                        <Input type="date" value={dtNasc ?? ""} onChange={alterarDtNasc} required />
 
                         <ButtonPrimary>Atualizar</ButtonPrimary>           
                     </form>           

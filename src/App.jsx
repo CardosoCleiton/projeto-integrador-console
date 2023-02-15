@@ -21,6 +21,7 @@ import { useState } from "react";
 import Loading from "./components/Ui/Loading/Loading";
 import { listAllCategory } from "./api/enpoints/categories/list-all-category";
 import { Categoria } from "./pages/Categoria/Categoria";
+import { RequireAuth } from "./contexts/Auth/RequiredAuth";
 
 
 const App = () => {
@@ -53,9 +54,9 @@ const App = () => {
           <Route path='/carrinho' element={<Carrinho />} />
           <Route path='/login' element={<Login />} />
           <Route path='/404' element={<NotFound />} />
-          <Route path='/dados/dados-pessoais' element={<DadosPessoais/>} />
-        {/*  <Route path="dados/pedidos" element={<Pedidos/>} /> */}
-          <Route path="/dados/enderecos" element={<Enderecos/>} /> 
+          <Route path='/dados/dados-pessoais' element={<RequireAuth><DadosPessoais/></RequireAuth>} />
+          <Route path="/dados/pedidos" element={<RequireAuth><Pedidos/></RequireAuth>} />
+          <Route path="/dados/enderecos" element={<RequireAuth><Enderecos/></RequireAuth>} /> 
           <Route path="*" element={<Navigate to="/404" />}/>
         </Routes>
       }

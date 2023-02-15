@@ -93,7 +93,7 @@ const Header = ({categorias}) => {
                     <ul>
                       <li>Minha Conta &#9660;
                         <ul>
-                          <li><Link to="/pedidos">Pedidos</Link></li>
+                          <li><Link to="/dados/pedidos">Pedidos</Link></li>
                           <li><Link to="/dados/dados-pessoais">Cadastro</Link></li>
                           <li><Link to="/dados/enderecos">Endereços</Link></li>
                           <li><Link to="#" onClick={handleLogout}>Sair da conta</Link></li>
