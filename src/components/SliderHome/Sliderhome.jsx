@@ -12,7 +12,7 @@ import "./style.slider.css";
 // import { Children } from "react";
 import BannerOne from "../BannerOne/BannerOne";
 
-export default function Sliderhome() {
+export default function Sliderhome({products}) {
 
   return (
     <>
@@ -27,30 +27,19 @@ export default function Sliderhome() {
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
         // centeredSlides={true}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
       >
-        <SwiperSlide>
-          <BannerOne/>
-        </SwiperSlide>
 
-        <SwiperSlide>
-          <BannerOne/>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <BannerOne/>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <BannerOne/>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <BannerOne/>
-        </SwiperSlide>
+        {products.map(product => {
+          return(
+            <SwiperSlide key={product.id}>
+              <BannerOne product={product}/>
+            </SwiperSlide>
+          )
+        })}
 
       </Swiper>
     </>

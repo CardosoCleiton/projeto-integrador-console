@@ -60,7 +60,7 @@ const LoginArea = () => {
 
                <ButtonPrimary>Entrar</ButtonPrimary>
 
-               <span>Não tem cadastro? <Link to="/#">Cadastre-se</Link></span>
+               <span>Não tem cadastro? <Link to="/cadastro">Cadastre-se</Link></span>
             </form>
          </div>
       </div>

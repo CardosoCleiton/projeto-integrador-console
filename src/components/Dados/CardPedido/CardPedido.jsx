@@ -21,7 +21,7 @@ const CardPedido = ({order}) => {
          <div className="pedido-title">
             <strong>Pedido: </strong>{order.id} - <strong>Data:</strong> {formatDate(new Date(order.date_request))}
          </div>
-            <h2>Status do Pedido: <strong>Pagamento Aprovado</strong></h2>
+            <h2>Status do Pedido: <strong>{order.history_status_orders[order.history_status_orders.length - 1].status}</strong></h2>
             <div className="show-more-pedido" style={visible ? {display: "block"} : {display: "none"}}>
                <h3>Produtos:</h3>
                <ul>

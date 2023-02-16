@@ -36,7 +36,7 @@ const App = () => {
       setLoading(false);
     })();
   }, []);
-  console.log(categories);
+
   return (
     <BrowserRouter>
     <ToastContainer autoClose={3000}/>

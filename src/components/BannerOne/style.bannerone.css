@@ -15,6 +15,13 @@ section {
   max-height: 450px;
   margin-right: 2rem;
   background-repeat: no-repeat;
+  /* background-color: black; */
+}
+
+.div-tv img{
+  max-width: 400px;
+  mix-blend-mode: multiply;
+  border-radius: 10px;
 }
 
 .div-txt-btn-banner {
@@ -32,6 +39,14 @@ section {
 
 .div-txt-btn-banner p {
   font-size: var(--paragraph-size);
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
+  color: #fff;
 }
 
 .div-txt-btn-banner button{

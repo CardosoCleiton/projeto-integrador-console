@@ -6,6 +6,10 @@
   padding: 20px 0;
 }
 
+.login-area span a{
+  color: #fff;
+}
+
 .login-area-border{
   width: 1px;
   height: auto;

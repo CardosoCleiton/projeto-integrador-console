@@ -12,6 +12,7 @@ const Home = () => {
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState({});
+  const [productsSlide, setProductsSlide] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -31,6 +32,12 @@ const Home = () => {
           })
         }
       }
+
+      const productsSlider = productsByCategory
+                              .map(product => product.rows)
+                              .map(products => products[0]);
+      setProductsSlide(productsSlider);
+
       setProducts(productsByCategory);
       setLoading(false);
     })();
@@ -42,7 +49,7 @@ const Home = () => {
 
   return (
     <>
-    <Sliderhome /> 
+    <Sliderhome products={productsSlide}/> 
     <main>
       {
         products.map((productByCategory, index) => {

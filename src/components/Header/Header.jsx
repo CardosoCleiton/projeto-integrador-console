@@ -85,7 +85,7 @@ const Header = ({categorias}) => {
 
               <div className='txt-area-login'>
                 
-                {!auth.user && <p>Faça seu <strong><Link to="/login">Login</Link></strong> ou <br /> crie seu <strong>Cadastro</strong></p>}
+                {!auth.user && <p>Faça seu <strong><Link to="/login">Login</Link></strong> ou <br /> crie seu <strong><Link to="/cadastro">Cadastro</Link></strong></p>}
                 
                 {auth.user &&
                   <>

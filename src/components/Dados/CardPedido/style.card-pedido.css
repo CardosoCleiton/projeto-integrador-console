@@ -10,15 +10,20 @@
    background-color: rgba(59, 61, 68, 0.2);
 }
 
+.pedido-title{
+   color: #5C7DF2;
+}
+
 .card-pedido h2{
    font-size: var(--title-size-4);
    margin-top: 10px;
-   color: #00A202;
+   color: #fff;
 }
 
 .card-pedido h3{
    font-size: var(--title-size-6);
    margin-top: 20px;
+   color: #5C7DF2;
 }
 
 .card-pedido button{

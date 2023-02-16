@@ -30,7 +30,7 @@ const StepFinish = () => {
                <h1>Uhuu! Você acaba de finalizar seu pedido.</h1>
                <h3>N° do pedido: <span>{order.id}</span></h3>
                <p>Status: <span>{order.history_status_orders[0].description}</span></p>
-               <p>Confira os detalhes em: <Link to="#">meus pedidos</Link></p>
+               <p>Confira os detalhes em: <Link to="/dados/pedidos">meus pedidos</Link></p>
             </div>
 
             <div className="login-area-border"></div>
